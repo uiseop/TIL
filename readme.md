@@ -13,4 +13,8 @@ blockquote는 들여쓰기로 작성되어있어 <p>태그 안에서 작성하�
 9. <mark>mark 태그</mark> : 하이라이터가 생기네. 형광펜 밑줄 쫙
 10. <small>small 태그</small> : 작은글씨로 써져 쿠쿸
 11. <sup>위로</sup><sub>아래로</sub> : sup,sub태그 지수 로그 표기할 때 쓰면 좋겠네 ex) log<sub>2</sub>2<sup>2</sup> = 2
-12. del 태그, ins 태그 : <del>삭제될</del> 애들, <ins>추가될</ins> 애들 
+12. del 태그, ins 태그 : <del>삭제될</del> 애들, <ins>추가될</ins> 애들 // 사용 할 수 있는 속성으론 cite:변경점 암시, datetime:변경 발생 일시
+13. code 태그 : 짧으 코드 조각을 나타내는 스타일을 사용. p태그는 block요소인데 code태그는 inline요소래.span 이랑 비슷한데 코드를 나타낼때 사용
+14. ⌨<kbd>키보드 태그</kbd> kbd태그⌨ : 키보드에 있는 Ctrl, Shift, R등등 그런애들을 inline요소에 적용함 // 사용량 많지 않아
+15. a태그 : 앵커Anchor : 닻의 줄인말이래 mailto속성 -> href="mailto:이메일주소", tel속성 -> href="tel:전화번호"
+target속성 -> 링크한 URL을 표시할 위치. 가능한 값은 브라우징 맥락으로, 즉 탭, 창, iframe의 이름이나 특정 키워드입니다.
