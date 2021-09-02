@@ -44,3 +44,16 @@ blockquote는 들여쓰기로 작성되어있어 <code>p</code>태그 안에서 
 3. <code>table</code> : 얘전엔 테이블을 사용해서 레이아웃을 잡았던적이 있대. 지금은 flex나 grid를 사용해서 하기 때문에 table을 써서 만드는건 <strong>❌지.양❌</strong> 해야해. <code>th</code> : table head는 해당 열의 대표값으로 <code>scope</code>라는 속성을 갖고있어 행의값인지, 열의값인지 정해(시각적인 요소는 아냐!) 
  - <code>thead</code>, <code>tbody</code>, <code>tfoot</code>으로 마크업하여 항목을 나눌 수 있어(☝위에 말했던것처럼 레이아웃을 잡아)
  - <code>caption</code>태그 : 표를 설명할때 사용해. 표의 제목같은<strong>반드시 표(table) 요소의 첫번째 자식으로 넣어야해.</strong>
+
+ # 임베디드 요소
+
+1. **HTML에서 지원하는 이미지** : <code>JPEG</code>:현재 가장많이 사용되는데 압축이 기가맥힘, <code>PNG</code>:원본 이미지를 지캬줘-선명한 사진, <code>GIF</code>움짤, <code>WEBP</code>:구글이 만든 이미지 포맷인데 아직 호환성이 떨어져, <code>SVG</code>:아이콘에서 많이 봤지-벡터이미지래👉아무리 확대해도 이미지가 깨지지 않음
+ - <code>img</code>태그의 srcset속성 : 반응형 이미지-사용자의 화면에 따른 다른 이미지를 보여주도록 서로 다른 이미지 크기를 넣어주는것. ```너비서술자 w 밀도서술자 x``` 가장 큰 사이즈를 받아오면 그 애로 계속 사용한데
+ - <code>sizes</code>속성 : (min-width:100px) 100px 👉100px이상 크기의 화면이면 100px크기가 최대인걸로 보여라 라는 뜻으로 <a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/img#attr-srcset">자세히</a> 에서 확인하자.😓
+2. <code><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/Video">video<a></code>태그 : (구글 - sample mp4 검색 다운로드) children요소는 <code>img</code>의 alt요소와 같은 기능을 해. 
+ - <code>controls</code>속성을 통해 컨트롤러를 키거나 끌 수 있어. 
+ - <code>autoplay</code>속성을 넣으면 들어오자마자 자동으로 실행해(단, 사운드가 있으면 실행되지 않으니 <code>mute</code>속성과 더불어서 사용하도록 하자.)
+ - <code>poster</code>속성을 사용하면 섬네일로 사용할 이미지를 설정할 수 있어.
+3. <code>audio</code>태그 : 대부분 video태그와 동일하게 사용 돼. 
+4. <code>canvas</code>태그 : WebGL API랑 사용된데. html에서 마크업을 하고, 그림을 그리려면은 Javascript를 사용해야한대.
+5. <code>iframe</code>태그 : inline frame요손데 다른 html페이지를 <code>src</code>태그로 구글맵같은걸로 불러온데(오호😮) <a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/iframe">자세히</a>
