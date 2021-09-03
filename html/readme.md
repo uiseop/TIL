@@ -1,8 +1,8 @@
 # 메타데이터
 
-<code>metadata</code>는 코드를 설명하기위한 데이터. 즉, html을 설명하는 데이터다~😱 <code>meta</code>태그 안에 문서의 설명을 넣어줘라~<code>name</code>과 <code>content</code> 쌍으로 작성하면 좋다야~SEO(검색엔진)의 추천을 잘 받을 수 있도록 꼼꼼하게 작성하는게 좋아
-<code>charset</code>속성👉인코딩하는 방식을 정해줘. <code>link</code>태그 : 현재 문서와 외부 리소스의 관계를 명시해. 보통 css나 js파일 연결하거나, 사이트의 파비콘 연결 등에 사용해 <code>rel</code>속성은 stylesheet를 가장 많이 사용해.(파비콘은 icon) 
-<code>MIME</code>타입 : link한 파일의 확장자를 정의해주는것. 대분류/소분류 ```ex)text/html, image/gif, application/xml 등``` 찾아서 사용해!
+<code>metadata</code>는 코드를 설명하기위한 데이터. 즉, html을 설명하는 데이터다.😱 <code>meta</code>태그 안에 문서의 설명을 넣어줘라. <code>name</code>과 <code>content</code> 쌍으로 작성하면 좋다야~SEO(검색엔진)의 추천을 잘 받을 수 있도록 꼼꼼하게 작성하는게 좋아<br>
+<code>charset</code>속성👉인코딩하는 방식을 정해줘. <code>link</code>태그 : 현재 문서와 외부 리소스의 관계를 명시해. 보통 css나 js파일 연결하거나, 사이트의 파비콘 연결 등에 사용해 <code>rel</code>속성은 stylesheet를 가장 많이 사용해.(파비콘은 icon) <br>
+<code>MIME</code>타입 : link한 파일의 확장자를 정의해주는것. 대분류/소분류 ```ex)text/html, image/gif, application/xml 등``` 찾아서 사용해!<br>
 <code>data</code>속성 : data속성은 Javascript에서 사용할 정보들을 담는 공간인가봐🤔
 
 # 텍스트 요소
