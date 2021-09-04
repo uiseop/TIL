@@ -25,10 +25,8 @@
         li:first-child{
             color: greenyellow;
         }
-
-        .movie:first-child{
-            font-size: 42px;
-            font-weight: 800;
+        #list > li:last-child{
+            color: tomato;
         }
 
         p:first-child{
@@ -57,6 +55,9 @@
         button:focus{
             background-color: blue;
         }
+        .lorem::selection{
+            background-color: tomato;
+        }
     </style>
     
 </head>
@@ -70,8 +71,14 @@
 
 
     <h2>Movie List</h2>
-    <ul>
-        <li class="movie">토이스토리</li>
+    <ul id="list">
+        <li class="movie">토이스토리
+            <ul>
+                <li>LIST</li>
+                <li>LIST</li>
+                <li>LIST</li>
+            </ul>
+        </li>
         <li class="movie">주토피아</li>
         <li class="movie">인사이드 아웃</li>
         <li class="movie">코코</li>
@@ -88,5 +95,11 @@
     <button>저를 눌러주세요!!</button>
     <button>저를 눌러주세요!!</button>
     <button>저를 눌러주세요!!</button>
+
+    <p class="lorem">로렘입숨</p>
+    <p class="lorem">로렘입숨</p>
+    <p class="lorem">로렘입숨</p>
+
+
 </body>
 </html>
