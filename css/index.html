@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        a[target]{
+            color: hotpink;
+        }
+
+        input[type="submit"]{
+            background-color: aquamarine;
+        }
+
+        a[href^="https://"]{
+            color: violet;
+        }
+
+        a[href$=".com"]{
+            font-weight: 600;
+        }
+
+        li:first-child{
+            color: greenyellow;
+        }
+
+        .movie:first-child{
+            font-size: 42px;
+            font-weight: 800;
+        }
+
+        p:first-child{
+            color: red;
+        }
+
+        input:not([placeholder]){
+            background-color: indianred;
+        }
+
+        button{
+            background-color: skyblue;
+            border: none;
+            margin: 10px;
+        }
+
+        button:hover{
+            background-color: teal;
+            color: white;
+        }
+
+        button:active{
+            background-color: red;
+        }
+
+        button:focus{
+            background-color: blue;
+        }
+    </style>
+    
+</head>
+<body>
+    <ul>
+        <li><a href="http://test.com" target="_blank">Example Link (com/http)</a></li>
+        <li><a href="http://test.org" target="_blank">Example Link (org/http)</a></li>
+        <li><a href="https://test.com">Example Link (com/https)</a></li>
+        <li><a href="https://test.org">Example Link (org/https)</a></li>
+    </ul>
+
+
+    <h2>Movie List</h2>
+    <ul>
+        <li class="movie">토이스토리</li>
+        <li class="movie">주토피아</li>
+        <li class="movie">인사이드 아웃</li>
+        <li class="movie">코코</li>
+        <li class="movie">어바웃타임</li>
+        <li class="movie">니모를 찾아서</li>
+    </ul>
+
+    <form>
+        <input type="text" placeholder="name"><br>
+        <input type="email" placeholder="email"><br>
+        <input class="pw" type="password" placeholder="password">
+    </form>
+
+    <button>저를 눌러주세요!!</button>
+    <button>저를 눌러주세요!!</button>
+    <button>저를 눌러주세요!!</button>
+</body>
+</html>
