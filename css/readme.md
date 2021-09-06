@@ -37,3 +37,25 @@
         - 일반 형제 선택자 결합(~) <code>span ~ p</code> 라고 하면 span의 형제 태그중 아래있는 p들을 선택해
         - 인접 형제 선택자 결합(+) <code>span + p</code> 라고 하면 span인접한 요소만(바로 뒤) 고를 수 있어!
     - <code>상속 제어하기</code> 👉 initial, inherit, unset이 있어!. how? all:initial로 상속을 끊을 수 있어 default로 돌리는거야!
+
+# 폰트 관련 속성
+
+1. <code>font-size/weight/family/style</code>을 가장 많이 사용. 한번에 선언하는 방법 : size,family를 입력한 후에, 그 앞에 style,weight를 입력하고 height의 경우 사이즈/높이 (슬레시 필수)로 작성해
+2. <code>Letter Spacing</code> 문자 사이 간격을 조정 : letter-spaing / word-spacing의 값을 할당. ex) 3px
+3. <code>text-align</code> 텍스트를 위치시키는 요소. block요소인지, inline요소인지에 따라 위치가 조정이 안될수도 있어. 왜냐! 전체 길이를 기준으로 좌,가운데,우로 정렬을 시키는것이기 때문에!
+4. <code>text-indent</code> 텍스트의 시작부분을 npx; 만큼 띄워쓰게 해줄 수 있는아이. font-align과 마찬가지로 block 요소인지, inline요소인지에 따라 달라져!
+5. <code>text-decoration</code> 해석 그대로 텍스트를 꾸며주는 요소. default는 solid형태고 테이블 스타일링하는거랑 비슷햐! 특징은 여러가지 요소를 함께 작성이 가능하다. 텍스트 컬러랑 꾸며놓은 요소랑 색을 바꿀 수 있어! 얘도 font처럼 한번에 작성할 수 있는데 font랑 다르게 <code>정해진 위치</code>가 따로 없어!
+6. <code>word-break</code>는 berak-all, keep-all 두가지 요소가 있어. 정해진 너비 크기를 넘어가는 텍스트를 강제로 사이즈를 조정시켜줄 수 있어. break-all을 사용하면 영어를 사이즈 조정할 수 있어. keep-all은 줄바뀜되는 요소를 없애. 스페이싱이 없으면!
+7. <code>text-transform</code> 적용되는 언어가 정해져잇어. 한국어는 ❌ uppercase,lowercase, capitalize(첫글자를 대문자화) 시킬 수 있어.
+
+# CSS 값과 단위
+
+1. <code>절대길이</code> : px을 대부분 사용하지
+2. <code>상대길이</code> : em : 1em은 부모의 font-size 상대적으로 부모의 사이즈를 따라가게 되어있어(<code>사실 %랑 똑.같.다</code>),rem : root의 font-szie를 따라가. 직관적으로 이해하기가 편햐져!
+    - <code>vw/vh</code> : 뷰포트란? 사이트에서 볼 수 있는 웹사이트의 화면비율. 100vw는 100% 뷰 너비, 100vh는 100% 뷰 높이 👉 디바이스의 크기에 따라 <code>반응형으로</code>웹사이트를 만들려 할 때 유용해!
+    - <code>vmin/vmax</code> : vw,vh중에 작은애가 vmin, 큰애가 vmax로 지정 돼. <code>어디서 사용?</code>
+    - <code>퍼센트(%)</code> : 부모 값의 상대적으로 계산이 되게 되어이썽. 
+
+3. 함수표기법
+    - <code>calc()</code> : calc(100% - 50px)로 하면 100%에서 50px만큼을 빼주면서 반응형으로 만들 수 있어 // 연산자 좌우에는 공백이 필요해
+    - <code>min()/max()</code> : min(100%, 200px)로 하면 2개 값중 더 작은값을 브라우저가 자동으로 선택해줄수 잇어.
