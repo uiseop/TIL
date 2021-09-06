@@ -93,3 +93,7 @@ blockquote는 들여쓰기로 작성되어있어 <code>p</code>태그 안에서 
  - drop down에서 또 한번 분류하고 싶어👉<code>optgroup</code>태그로 감싸서 카테고리별로 분류할 수 있어. 결과는 들여쓰기로 나와! 카테고리 명은 <code>optgroup</code>태그 안에 <code>label</code>속성을 통해 값을 넣어주면 돼!
 <code>textarea</code>는 여러줄의 text를 입력을 받을 수 있게 해줘. rows,cols속성을 사용하면 보여주는 행,렬의 개수를 정해줄 수 있어
 
+# 정기테스트 복습
+
+1. table태그의 요소. <thead> -> <tr> -> <th> // th요소는 무조건 첫 row에만 씨지 않음. 두번째줄에도 이어쓰기 가능. 그냥 태그일뿐 기능 x
+2. meta태그의 요소. property="og:inamge" 👉 이미지표시, property="og:description", "title" 제목과 내용으로 쓴데...
