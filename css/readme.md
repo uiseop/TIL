@@ -71,3 +71,20 @@
 5. <code>border</code> : 기본값은 none, 키워드로 스타일을 정할 수 있어/short hand(단축속성)도 있어. <code>스타일, 두꼐, 색상</code>
 6. <code>outline</code> : border랑은 다르게 tab이나 마우스로 클릭했을 때 focus되는 속성이 outline이야!
 7. <code>box-sizing</code> : <code>총 너비, 높이</code>길이를 설정한 width, height로 반응형으로 움직여. padding혹은 border의 크기만큼 커지거나 작아져!. 값은 <code>border-box</code>, default는 content-box : 설정❌
+
+# 레이아웃
+
+1. <code>display</code> : block인지, inline인지, inline-block인지! 
+    - inline요소는 top/bottom의 margin,padding을 추가하지 못해. 대신 여러 요소가 가로 배치가 가능 해
+    - block요소는 여러 요소가 세로 배치가 돼. 
+    - inline-block요소의 대표적인 예는 input. block요소처럼 width, height를 지정할 수 있는데 가로 배치가 돼!
+    - none : 눈에서 보이지 않게 할 수 있는데 hidden이랑 비슷해. <code>차이점은?</code>none은 렌더링시 아예 그리질 않아. but hidden은 자리는 차지하지만 눈에만 보이지 않아! 레이아웃에서 베재하는지, 안하는지!
+2. <code>float</code> : 영단어 뜻대로 붕붕 띄울 수 있어. left나 right요소를 줄 수 있어. 현대에는 <code>flex박스</code>가 등장해서 많이 사용되지 않아. 갈 수 있는 최대한의 left,right로 이동해
+3. <code>position</code> : 계산 법칙만 이해하면 어렵지 않게 이해할 수 있어-<code>Normal Flow</code>
+    - static : 기본값! top,bottom,right,left를 쓸 수 없어!!❌❌
+    - relative : 자기 자신을 기준으로! t,b,r,l를 줄 수 있어(마치 margin을 준것처럼) 하지만 margin이랑 다르게 아래애는 그대로 있어서 그 애를 덮을 수 도 있어. 반대값을 쓰면 top과 left가 우선시 돼
+    - absolute : 그 자리에서 붕 뜬것처럼 보여. float 자기자리처럼 보여! t,b,r,l을 하면 자기 조상중에 <code>position이 static이 아닌❌❌</code> 조상을 기준으로 이동을 해
+    - fixed : 뷰포트를 기준으로 삼는다! 그래서 스크롤을 한다 하더라도 그 위치에 존재해
+    - sticky : Normal-Flow대로 진행하다가, 어느 시점에 도달하면 스티커처럼 fixed로 고정 돼. <code>스크롤이 지나갔을 때</code> fixed처럼 동작시키게 하고싶을때 사용 돼. <code>스크롤 되는 조상-body의 직계 자손에 요소를 추가해야 동작이 돼</code>
+4. <code>overflow</code> : 내부 컨텐츠가 넘쳐흐를때 -> 스크롤이 생기는거를 없애거나 넘친 텍스트를 없애거나! scroll을 생기게 하던가! auto하던가!
+5. <code>z-index</code> : z축에 순서를 지정한다! 값이 높을수록 우선순위가 높아! 높을수록 눈앞에 가까워지는거지! 혹은 position값을 지정해서 더 위에 뜨게 할 수 있어!
