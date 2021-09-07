@@ -59,3 +59,15 @@
 3. 함수표기법
     - <code>calc()</code> : calc(100% - 50px)로 하면 100%에서 50px만큼을 빼주면서 반응형으로 만들 수 있어 // 연산자 좌우에는 공백이 필요해
     - <code>min()/max()</code> : min(100%, 200px)로 하면 2개 값중 더 작은값을 브라우저가 자동으로 선택해줄수 잇어.
+
+# 박스 모델
+
+1. 태그 자체 속성이 <code>inline</code>인 친구들은 width를 아무리 줘도 더이상 넓어지거나 좁아지지 않아(변경X!)
+2. 짜부가 되지 않도록 하는 속성 <code>min-width, max-width</code>를 하면 더이상 짜부가 되지 않아ㅋㅋ
+3. <code>margin</code>는 box양파껍데기의 가장 밖쪽 요소. 상하좌우 순으로 입력을 받고, 2개만 입력받으면 y축,x축 요소 영향, 3개받으면 위, (좌,우), 아래, <code>%(퍼센트)</code>값은 무조건 부모의 <code>width값</code>의 %로 계산 돼 // 이는 padding도 동일해!
+4. <code>마진상쇄</code>:block요소, 위/아래 margin에만 일어나는 현상으로, 둘 중 큰 크기를 가진 margin으로 합쳐져
+    - 부모요소와 자식요소 : margin top이 상쇄돼 <code>해결법</code> : 두가지 사이를 끊어줄 수 있는 요소 : boredr/padding요소를 추가해주면 해결!
+    - 혹여나 margin을 줫는데 동작을 안하면 이걸 떠올려!
+5. <code>border</code> : 기본값은 none, 키워드로 스타일을 정할 수 있어/short hand(단축속성)도 있어. <code>스타일, 두꼐, 색상</code>
+6. <code>outline</code> : border랑은 다르게 tab이나 마우스로 클릭했을 때 focus되는 속성이 outline이야!
+7. <code>box-sizing</code> : <code>총 너비, 높이</code>길이를 설정한 width, height로 반응형으로 움직여. padding혹은 border의 크기만큼 커지거나 작아져!. 값은 <code>border-box</code>, default는 content-box : 설정❌
