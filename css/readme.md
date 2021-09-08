@@ -88,3 +88,31 @@
     - sticky : Normal-Flow대로 진행하다가, 어느 시점에 도달하면 스티커처럼 fixed로 고정 돼. <code>스크롤이 지나갔을 때</code> fixed처럼 동작시키게 하고싶을때 사용 돼. <code>스크롤 되는 조상-body의 직계 자손에 요소를 추가해야 동작이 돼</code>
 4. <code>overflow</code> : 내부 컨텐츠가 넘쳐흐를때 -> 스크롤이 생기는거를 없애거나 넘친 텍스트를 없애거나! scroll을 생기게 하던가! auto하던가!
 5. <code>z-index</code> : z축에 순서를 지정한다! 값이 높을수록 우선순위가 높아! 높을수록 눈앞에 가까워지는거지! 혹은 position값을 지정해서 더 위에 뜨게 할 수 있어!
+
+# 색상
+
+1. <code>rgba, opacity</code> rgba는 배경요소에만 영향을 주고, opacity는 안의 children요소를 포함한 내부 전체의 투명도를 조정해
+2. <code>background-image</code> : background-color보다 위서 생성 돼. 이미지를 넣으려면 url이라는 함수 표기법을 사용해 ex) url("../..") 사이즈가 다르면 기본적으로 바둑판 형식으로 여러 이미지로 크기를 채워!
+3. <code>background-repeat</code> : 바둑판식으로 넘처흐르는 사진들을 제어해! 기본값은 바둑판이니까 repeat이고, x에 하거 싶으면 repeat-x, 반복 안하고싶으면 no-repeat인데 크기는 차지하고, 이미지는 자기 크기만큼만 갖어
+4. <code>background-position</code> : no-repeat일때 이미지를 관리하는 방법. 
+    - x축값, y축값을 입력받아서 좌슥 상단 꼭지점에서 위치를 지정해. 
+    - 키워드로 top, right, bottom, left, center를 쓸 수 있어
+5. <code>background-origin</code> : border/padding/content-box로 지정할 수 있어. 각 지정 값을 기준으로 상대적으로 배치할 수 있어.  <code>원점을 어떻게 할지</code>결정해줄수 있는 요소!
+    - content-box : 선언한 크기의 좌측 상단이 background의 시작점이 돼
+    - padding-box : 패딩의 좌측 상단부분이 background의 시작점이 돼 (default값임)
+    - border-box : 보더 박스의 좌측 상단부분이 // (같은 말)
+6. <code>background-size</code> 처음 2개는 이미지의 비율을 지켜
+    - cover : 이미지가 찌그러지지 않는 한도내에서 가장 크게 꽉 차게 맞춤
+    - contain : 이미지가 전부 나올 수 있도록 만들어줘. 빈공간이 생김 
+    - length값,px값 : 크기가 고정이 돼. 가령 100px * 100px의 이미지가 나타남(비율 지키지 않음), 대신 값을 하나만 입력하면 width값에 맞춰서 비율이 늘어난다. 가로비율만 맟줘
+7. <code>short hand!</code> : background단축속성으로 한번에 선언할 수 있어
+    - background : red url('../../..') no-repeat
+
+# transform
+
+크게만들거나, 작게만들고, 돌리거나 이동시킬 수 있어
+1. <code>scale</code> : 2D만을 위한 함수. sale(0.5)라고 해도 원래 공간은 갖는데 그 안에서 사이즈가 절반으로 줄여서 width를 반으로 줄이는거랑은 다른거다.
+2. <code>rotate</code> : 단위로 deg, rad, turn을 사용할 수 있어
+3. <code>translate</code> : x축, y축으로의 이동 , 50%는 가로,세로의 비율을 따라간다
+4. <code>skew</code> : 기울이다! x각도, y각도로 기울인것. 90도로 기울이면 사랴져
+5. <code>transform-origin</code> : 기준점이나, 원점을 옮긴다. top left로 설정할수도 있고, px로 정할수도 있어!
