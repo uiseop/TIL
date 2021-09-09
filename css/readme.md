@@ -116,3 +116,20 @@
 3. <code>translate</code> : x축, y축으로의 이동 , 50%는 가로,세로의 비율을 따라간다
 4. <code>skew</code> : 기울이다! x각도, y각도로 기울인것. 90도로 기울이면 사랴져
 5. <code>transform-origin</code> : 기준점이나, 원점을 옮긴다. top left로 설정할수도 있고, px로 정할수도 있어!
+
+# transition 
+
+버튼을 올리면 시간차를 둬서 촤라락 변하도록 만들 수 있어! 그래서 시간과ㅏ 관련된 개념이 들어가! transform과 함께쓰면 엄청난 효과가❗❗ transition 관련 이벤트는 hover나 click같은 이벤트들이 있는데 해당 이벤트 안에 transition요소들을 넣게 되면 그 때만 효과가 넣어지고 <code>원래 요소안에</code> 넣게 되면 이벤트 발생, 해제시에도 같이 효과를 줄 수 있어!
+1. <code>transition-delay</code> : 지연시키기? 시간 관련된 개념이 들어가! 아하! <code>이벤트가 발생된 후에</code> 이벤트가 진행되도록. 도미노같은 효과를 줄 수 있어. 요소들이 여러개 있을 때 파도치듯이 움직이게 할 수 있지!
+2. <code>transition-duration</code> : 시간과 관련된 개념! s나 ms를 사용해!!<code>1s = 1000ms</code>
+3. <code>transition-property</code> : 요소가 갖고있는 특정 property를 바꿔! margin이나 padding같은?! <code>none, all, margin ...</code>
+4. <code>transition-timing-function</code> : 색이 바뀔때 색이 섞이게 되어있어! 그럴때 진행속도를 어떻게 하는가 <code>ease, linear, ease-out, ease-in..</code>어려워!
+5. <code>transition(short hand!)</code> 순서가 중요해! 처음엔 변경할 요소-두번째부턴 시간 관련 요소. 시간은 2가지 있어서 하나라면 duration, 2개라면 앞이 duration-뒤가 delay! 
+
+# animation
+
+트렌지션과 같이 시간 개념이 들어가고 css가 변경 돼. 하지만 트렌지션은 유저의 이벤트가 발생해야지 같이 일어나는데 애니메이션은 자동으로 혼자 실행 가능햐!
+1. <code>@keyframes</code> : @(at)이랑 같이 써서 시작해야햐. 작성법은 @keyframse 애니메이션이름작성 { ... }
+ - <code>2개가 있을경우</code> from{} to{}를 사용해서 어떻게 변경할건지 작성해
+ - <code>3개 이상이 있을 경우</code> %로 시간을 나눠서 0% ~ 100% 까지 작성해!
+2. animation의 <code>short cut</code> : animation : 애니메이션이름-시간-infinite-alternate 등의 요소를 쓸 쑤 있어

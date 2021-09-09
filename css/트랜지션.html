@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 80px;
+            border: 2px dotted teal;
+            background-color: darkgoldenrod;
+            font-size: 50px;
+            color: whitesmoke;
+
+            /* transition-property: all;
+            transition-duration: .8s;
+            transition-timing-function: ease-in-out; */
+
+            transition: all .8s ease-in-out;
+        }
+
+        .box:hover{
+            background-color: indianred;
+            color: black;
+            font-size: 60px;
+            height: 420px;
+        }
+
+        .fox{
+            width: 100px;
+            height: 100px;
+            border : 10px solid seagreen;
+            background-color: rgb(204, 253, 225);
+            border-radius: 30px;
+            animation: my-first-animation 1s infinite;
+
+        }
+        .fox1{
+            width: 100px;
+            height: 100px;
+            border : 10px solid seagreen;
+            background-color: rgb(255, 221, 198);
+            border-radius: 30px;
+            animation: my-first-animation 1s infinite .3s;
+
+        }
+        .fox2{
+            width: 100px;
+            height: 100px;
+            border : 10px solid seagreen;
+            background-color: rgb(186, 239, 255);
+            border-radius: 30px;
+            animation: my-first-animation 1s infinite .6s;
+        }
+
+
+        @keyframes my-first-animation {
+            0%{
+                font-size: 20px;
+            }
+            50%{
+                font-size: 60px;
+                width: 300px;
+            }
+            100%{
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Hover Me! ❤
+    </div>
+
+    <div class="fox">😉</div>
+    <div class="fox1">😉</div>
+    <div class="fox2">😉</div>
+</body>
+</html>
