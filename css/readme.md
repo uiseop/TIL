@@ -62,7 +62,7 @@
 
 # 박스 모델
 
-1. 태그 자체 속성이 <code>inline</code>인 친구들은 width를 아무리 줘도 더이상 넓어지거나 좁아지지 않아(변경X!)
+1. 태그 자체 속성이 <code>inline</code>인 친구들은 width를 아무리 줘도 더이상 넓어지거나 좁아지지 않아(변경X!) inline 은 css 속성을 변경할 수 없어
 2. 짜부가 되지 않도록 하는 속성 <code>min-width, max-width</code>를 하면 더이상 짜부가 되지 않아ㅋㅋ
 3. <code>margin</code>는 box양파껍데기의 가장 밖쪽 요소. 상하좌우 순으로 입력을 받고, 2개만 입력받으면 y축,x축 요소 영향, 3개받으면 위, (좌,우), 아래, <code>%(퍼센트)</code>값은 무조건 부모의 <code>width값</code>의 %로 계산 돼 // 이는 padding도 동일해!
 4. <code>마진상쇄</code>:block요소, 위/아래 margin에만 일어나는 현상으로, 둘 중 큰 크기를 가진 margin으로 합쳐져
@@ -70,7 +70,7 @@
     - 혹여나 margin을 줫는데 동작을 안하면 이걸 떠올려!
 5. <code>border</code> : 기본값은 none, 키워드로 스타일을 정할 수 있어/short hand(단축속성)도 있어. <code>스타일, 두꼐, 색상</code>
 6. <code>outline</code> : border랑은 다르게 tab이나 마우스로 클릭했을 때 focus되는 속성이 outline이야!
-7. <code>box-sizing</code> : <code>총 너비, 높이</code>길이를 설정한 width, height로 반응형으로 움직여. padding혹은 border의 크기만큼 커지거나 작아져!. 값은 <code>border-box</code>, default는 content-box : 설정❌
+7. <code>box-sizing</code> : <code>총 너비, 높이</code>길이를 설정한 width, height로 반응형으로 움직여. padding혹은 border의 크기만큼 커지거나 작아져!. 값은 <code>border-box</code>는 border사이즈를 합친 사이즈가 총 사이즈가 되는거야, default는 content-box : 설정❌ 기본 사이즈를 갖고 있고, border의 크기가 더해져!
 
 # 레이아웃
 
@@ -137,3 +137,28 @@
     - animation-direction : normal, reverse, <code>alternate</code>:정방향으로갔다가 다시 돌아오는 애니메이션!, alternate-reverse:역방향으로 시작해서 다시 돌아오기!
     - animation-play-state : 애니메이션의 상태를 지정할 수 있어. paused, running으로 변경 가능해!
     - animation-fill-mode : 마지막의 스타일을 지정할 수 있어. forward는 ani의 마지막, backwards는 ani의 처음을 유지해주면서 애니메이션을 유지시켜줄 수 있어
+
+# Flexbox
+
+레이아웃을 구성할 수 있게 해줘. felxible layout! 정렬하고 싶은 부모요소에 마법을 부린다.<br/>
+용어 : flex container, flex item, main axis:메인축(가로), cross axis:교차축(세로)
+- <code>컨테이너</code>에 사용하는것들 
+    1. flex-direction : 컨테이너 내의 아이템들을 배치할 방향과 주축을 결정 : row, column
+    2. flex-wrap : 무언가를 포장하는 느낌. 강제로 한줄로 배치되게 할것인지, 여러줄을 허용할것인지 정하는것 👉 어떻게? 자신의 크기를 보장해주는 wrap을 사용해서. wrap은 틀이야! 틀을 빵틀은 못줄여!
+    3. <code>direction + wrap</code> : 오른쪽 밑에 위치시킬 수 있어. reverse속성 써서
+    4. ```justify-content``` : 주축을 기준으로 아이템을 어떻게 배열할건지! 
+    start, center, end, space-between/around,  flex-start(주축이 시작하는 위치에서부터 정렬) 때문에 ```flex-direction```을 알아야해!
+    5. ```align-items``` : 교차축을 기준으로 아이템을 정렬해! flex-start, flex-end, center, stretch(기본값인데 시작에서 끝까지 연결돼 : ```교차축만큼```)
+    또 얘는 아이템 ```한줄```의 속성을 주는거니까 space-between같은건 사용 못해!
+    6. 한줄일때는 align-items, 여러줄일때는 ```align-content```를 써!
+    flex-start면 교차축의 시작에 붙고, end면 끝에 붙고, center면 가운데에 붙어. 얘는 여러줄이니까 space-between 쓸 수 있음
+
+
+- <code>아이템</code>에 사용하는 것들
+    1. order : flex나 grid에서 순서를 지정할 수 있어(코드의 순서대로 말고) 음수값도 쓸 수 있어. 작을수록 왼쪽에(start)에 위치해. nth-child(3)를 써서 3번쨰 자식을 바꿔
+    2. flex-grow : 배치를 한 다음에도 공간이 남을때 grow값을 1 주면 나머지 공간을 자기네들끼리 나눠갖음. grow의 값대로 각자 비율대로 갖게 돼. 늘리게 되기 전의 사이즈에 남은 사이즈를 1/n해서 가져가서 처음 ```크기가 다르면``` 후의 크기도 달라
+    3. flex-shrink : grow는 늘어나지만 얘는 줄어들어. 1 값이 default
+    4. flex-basis : 늘어나고 줄어드는 값을 조절할 수 있음. flex-grow의 처음 크기가 달랐던 문제를 해결. ```basis : 초기값``` 을 설정해서 모두 다 같은 사이즈로 설정할 수 있어. ```basis:0```으로 하면 크기가 변하기 전에 0의 사이즈를 줘서 변경크기는 동일한걸로 만들 수 있어
+    5. ```short hand``` 👉 flex : grow, shrink, basis순서로 사용해!!
+    하나 또는 2개의 값을 사용하면 basis는 default로 0값을 돼. px을 쓸 수 있어
+    6. align-self : 얘는 ```각자의``` 위치를 정하는애. align-items는 각 줄의 위치를 어디다둘지 하는것. 그래서 nth-child(4) 같이 사용해서 그 애의 위치를 지정할 수 있어
