@@ -1,66 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            margin: 0;
+        body {
+            margin: 0px;
         }
-        header{
+        .relative{
+            float:left;
+            max-width: 720px;
+        }
+
+        header {
             background-color: blue;
             color: whitesmoke;
             padding: 16px;
         }
-        .title{
+
+        .title {
             line-height: 64px;
             font-size: 28px;
             font-weight: bold;
         }
-        .desc{
+
+        .desc {
             font-size: 14px;
         }
-        main{
+
+        main {
             margin: 60px 16px;
         }
-        .aTitle{
+
+        .aTitle {
             font-size: 24px;
             font-weight: bold;
         }
-        .aTitle, .aDesc{
+
+        .aTitle,
+        .aDesc {
             margin: 16px;
         }
-        .rank{
+
+        .rank {
+            
+            width: 100%;
             margin: 60px 16px;
         }
-        ol{
+
+        ol {
             font-weight: bold;
         }
-        li{
+
+        li {
+            box-sizing: border-box;
             border-bottom: 1px solid black;
             padding: 7px;
         }
-
     </style>
 </head>
+
 <body>
-    <header>
-        <div class="title">삼성전자</div>
-        <div class="desc">종목코드: 005930</div>
-    </header>
-    <main>
-        <article>
-            <div class="aTitle">회사소개</div>
-            <div class="aDesc">한국 및 CE, IM부문 해외 9개 지역총괄과 DS부문 해외 5개 지역총괄,
-                Harman 등 241개의 종속기업으로 구성된 글로벌 전자기업임. 세트사업에는
-                TV, 냉장고 등을 생산하는 CE부문과 스마트폰, 네트워크시스템, 컴퓨터
-                등을 생산하는 IM부문이 있음. 부품사업(DS부문)에서는 D램, 낸드 플래쉬,
-                모바일AP 등의 제품을 생산하는 반도체 사업과 TFT-LCD 및 OLED 디스플레이
-                패널을 생산하는 DP사업으로 구성됨.</div>
-        </article>
-    </main>
+    <div class="relative">
+        <header>
+            <div class="title">삼성전자</div>
+            <div class="desc">종목코드: 005930</div>
+        </header>
+        <main>
+            <article>
+                <div class="aTitle">회사소개</div>
+                <div class="aDesc">한국 및 CE, IM부문 해외 9개 지역총괄과 DS부문 해외 5개 지역총괄,
+                    Harman 등 241개의 종속기업으로 구성된 글로벌 전자기업임. 세트사업에는
+                    TV, 냉장고 등을 생산하는 CE부문과 스마트폰, 네트워크시스템, 컴퓨터
+                    등을 생산하는 IM부문이 있음. 부품사업(DS부문)에서는 D램, 낸드 플래쉬,
+                    모바일AP 등의 제품을 생산하는 반도체 사업과 TFT-LCD 및 OLED 디스플레이
+                    패널을 생산하는 DP사업으로 구성됨.</div>
+            </article>
+        </main>
+    </div>
     <div class="rank">
         <div class="aTitle">시가총액 순위</div>
         <ol>
@@ -77,4 +97,5 @@
         </ol>
     </div>
 </body>
+
 </html>
