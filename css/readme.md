@@ -45,7 +45,7 @@
 3. <code>text-align</code> 텍스트를 위치시키는 요소. block요소인지, inline요소인지에 따라 위치가 조정이 안될수도 있어. 왜냐! 전체 길이를 기준으로 좌,가운데,우로 정렬을 시키는것이기 때문에!
 4. <code>text-indent</code> 텍스트의 시작부분을 npx; 만큼 띄워쓰게 해줄 수 있는아이. font-align과 마찬가지로 block 요소인지, inline요소인지에 따라 달라져!
 5. <code>text-decoration</code> 해석 그대로 텍스트를 꾸며주는 요소. default는 solid형태고 테이블 스타일링하는거랑 비슷햐! 특징은 여러가지 요소를 함께 작성이 가능하다. 텍스트 컬러랑 꾸며놓은 요소랑 색을 바꿀 수 있어! 얘도 font처럼 한번에 작성할 수 있는데 font랑 다르게 <code>정해진 위치</code>가 따로 없어!
-6. <code>word-break</code>는 berak-all, keep-all 두가지 요소가 있어. 정해진 너비 크기를 넘어가는 텍스트를 강제로 사이즈를 조정시켜줄 수 있어. break-all을 사용하면 영어를 사이즈 조정할 수 있어. keep-all은 줄바뀜되는 요소를 없애. 스페이싱이 없으면!
+6. <code>word-break</code>는 berak-all, keep-all 두가지 요소가 있어. 정해진 너비 크기를 넘어가는 텍스트를 강제로 사이즈를 조정시켜줄 수 있어. break-all을 사용하면 영어를 사이즈 조정할 수 있어. keep-all은 줄바뀜되는 요소를 없애. 스페이싱이 없으면! 줄바꿈 할 때 단어 기준으로 할 지 글자 기준으로 할 지 정하는 속성! 댓글이나 포스팅 쓸 때 태그 속성으로 정할 수 있어!
 7. <code>text-transform</code> 적용되는 언어가 정해져잇어. 한국어는 ❌ uppercase,lowercase, capitalize(첫글자를 대문자화) 시킬 수 있어.
 
 # CSS 값과 단위
