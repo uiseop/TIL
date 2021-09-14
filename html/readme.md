@@ -16,17 +16,18 @@ blockquote는 들여쓰기로 작성되어있어 <code>p</code>태그 안에서 
 5. <code>abbr</code> 태그 : 문자의 약어를 표현 : 속성으로 title을 써서 원래 뜻을 알려주면 좋데
 6. 주소나 웹메일 주소 등 <code>address</code> 태그를 사용한데. 이텔릭체로 디폴트로 적용되서 랜더링해주는듯
 7. <code>bdo</code> 태그 : 택스트를 아랍어 형식으로 작성할 때 사용 (별로..)
-8. <b>b 태그</b> : 택스트를 굵게 해주는 태그 : font-weight 주는것이지!
-9. <code>mark 태그</code> : 하이라이터가 생기네. 형광펜 밑줄 쫙
-10. <code>small 태그</code> : 작은글씨로 써져 쿠쿸
+8. <b>b</b> : 택스트를 굵게 해주는 태그 : font-weight 주는것이지!
+9. <code>mark</code> : 하이라이터가 생기네. 형광펜 밑줄 쫙
+10. <code>small</code> : 작은글씨로 써져 쿠쿸
 11. <sup>위로</sup><sub>아래로</sub> : sup,sub태그 지수 로그 표기할 때 쓰면 좋겠네 ex) log<sub>2</sub>2<sup>2</sup> = 2
 12. <code>del</code> 태그, ins 태그 : <del>삭제될</del> 애들, <ins>추가될</ins> 애들 // 사용 할 수 있는 속성으론 cite:변경점 암시, datetime:변경 발생 일시
 13. <code>code</code> 태그 : 짧으 코드 조각을 나타내는 스타일을 사용. p태그는 block요소인데 code태그는 inline요소래.span 이랑 비슷한데 코드를 나타낼때 사용
 14. ⌨<kbd>키보드 태그</kbd> <code>kbd</code>태그⌨ : 키보드에 있는 Ctrl, Shift, R등등 그런애들을 inline요소에 적용함 // 사용량 많지 않아
 15. <code>a</code>태그 : 앵커Anchor : 닻의 줄인말이래 mailto속성 -> href="mailto:이메일주소", tel속성 👉 href="tel:전화번호"
-<code>target</code>속성 -> 링크한 URL을 표시할 위치. 가능한 값은 브라우징 맥락으로, 즉 탭, 창, iframe의 이름이나 특정 키워드입니다. _blank 값을 많이 쓴다는데 default로 새탭에서 열린데 👉 ```<a href="/www.naver.com" target="_blank">네이버</a>```
+<code>target</code>속성 -> 링크한 URL을 표시할 위치. 가능한 값은 브라우징 맥락으로, 즉 탭, 창, iframe의 이름이나 특정 키워드입니다. _blank 값을 많이 쓴다는데 default로 새탭에서 열린데 👉 ```<a href="/www.naver.com" target="_blank">네이버</a>``` , _self, _parent, _top, 
+또한 특정 위치의 ```아이디값(#container)을``` 넣으면 그 위치로 슝~ 간다. ```download``` 속성을 넣으면 그 파일을 다운받을 수 있게 돼. ```target = "right" 로 설정 👉 name="right"의 iframe의 url이 변경 돼```
 
-16. Entity : html코드안에 특수문자를 사용하고 싶으면 &+lt+;, &+gt+;, 등등 사용하면 돼! ```w3c entity```에서 그때그때 찾아보면서 사용해도 될듯햐!
+16. Entity : html코드안에 특수문자(띄워쓰기, 스페이스, 부등호 >,<)를 사용하고 싶으면 &+lt+;, &+gt+;, 등등 사용하면 돼! ```w3c entity```에서 그때그때 찾아보면서 사용해도 될듯햐!
 
 # 구조 요소
 
@@ -63,7 +64,7 @@ blockquote는 들여쓰기로 작성되어있어 <code>p</code>태그 안에서 
  - <code>poster</code>속성을 사용하면 섬네일로 사용할 이미지를 설정할 수 있어.
 3. <code>audio</code>태그 : 대부분 video태그와 동일하게 사용 돼. 
 4. <code>canvas</code>태그 : WebGL API랑 사용된데. html에서 마크업을 하고, 그림을 그리려면은 Javascript를 사용해야한대.
-5. <code>iframe</code>태그 : inline frame요손데 다른 html페이지를 <code>src</code>태그로 구글맵같은걸로 불러온데(오호😮) <a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/iframe">자세히</a>
+5. <code>iframe</code>태그 : inline frame요손데 다른 html페이지를 <code>src</code>태그로 구글맵같은걸로 불러온데(오호😮) ```src="URL"``` a태그랑 비슷해!<a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/iframe">자세히</a> 
 
 # Form 사용법
 
@@ -77,7 +78,9 @@ blockquote는 들여쓰기로 작성되어있어 <code>p</code>태그 안에서 
 # input 사용법
 
 - <code>input</code>태그는 속성이 매우 많아. 그 중 minlength와 maxlength를 통해 입력 개수를 조절할 수 있어 / 값으로 min과 max로 줄 수도 있지 <code>step</code>을 사용해서 증가하는 단위를 지정해줄수도 있다!
-- <code>type</code>속성 <code>"number"</code>:숫자만 입력받아. <code>"range"</code>:막대그래프가나와. <code>date/month/time</code>년,월,일을 입력받아
+- <code>type</code>속성 
+    - <code>"number"</code>:숫자만 입력받아. <code>"range"</code>:막대그래프가나와. 
+    - <code>date/month/time</code>년,월,일을 입력받아
     - <code>"checkbox"</code>이름그대로 체크박스. 체크를하고 submit하면 설정한 <code>name=on</code>으로 넘어가. <code>checked</code>는 default로 체크돼
     - <code>"radio"</code> radio는 <code>name</code>이 다르면 중복선택이 가능하고, 같으면 하나만 선택 가능해. 👉어떻게 확인하게? 각각value값으루. 왜why?넘어가는건 ❗<code>name과 value</code>❗니까
 - <code>autocomplete</code> on과 off로 값을 줄 수 있는데 검색창에 검색했던 요소들이 나오는것과 같은 기능을 줄 수 있어
@@ -96,4 +99,4 @@ blockquote는 들여쓰기로 작성되어있어 <code>p</code>태그 안에서 
 # 정기테스트 복습
 
 1. table태그의 요소. <thead> -> <tr> -> <th> // th요소는 무조건 첫 row에만 씨지 않음. 두번째줄에도 이어쓰기 가능. 그냥 태그일뿐 기능 x
-2. meta태그의 요소. property="og:inamge" 👉 이미지표시, property="og:description", "title" 제목과 내용으로 쓴데...
+2. meta태그의 요소. property="og:image" 👉 이미지표시, property="og:description", "title" 제목과 내용으로 쓴데...
