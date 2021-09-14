@@ -133,18 +133,18 @@
  - <code>2개가 있을경우</code> from{} to{}를 사용해서 어떻게 변경할건지 작성해
  - <code>3개 이상이 있을 경우</code> %로 시간을 나눠서 0% ~ 100% 까지 작성해!
 2. animation의 <code>short cut</code> : animation : 애니메이션이름-시간-infinite-alternate 등의 요소를 쓸 쑤 있어
-    - animation-iteration-count : 1,2,3번으로 수를 지정할 수 있고, <code>infinite</code>를 주면 무한번 반복시킬 수 있어
-    - animation-direction : normal, reverse, <code>alternate</code>:정방향으로갔다가 다시 돌아오는 애니메이션!, alternate-reverse:역방향으로 시작해서 다시 돌아오기!
-    - animation-play-state : 애니메이션의 상태를 지정할 수 있어. paused, running으로 변경 가능해!
-    - animation-fill-mode : 마지막의 스타일을 지정할 수 있어. forward는 ani의 마지막, backwards는 ani의 처음을 유지해주면서 애니메이션을 유지시켜줄 수 있어
+    - ```animation-iteration-count``` : 1,2,3번으로 수를 지정할 수 있고, <code>infinite</code>를 주면 무한번 반복시킬 수 있어
+    - ```animation-direction``` : normal, reverse, <code>alternate</code>:정방향으로갔다가 다시 돌아오는 애니메이션!, alternate-reverse:역방향으로 시작해서 다시 돌아오기!
+    - ```animation-play-state``` : 애니메이션의 상태를 지정할 수 있어. paused, running으로 변경 가능해!
+    - ```animation-fill-mode``` : 마지막의 스타일을 지정할 수 있어. forward는 ani의 마지막, backwards는 ani의 처음을 유지해주면서 애니메이션을 유지시켜줄 수 있어
 
 # Flexbox
 
 레이아웃을 구성할 수 있게 해줘. felxible layout! 정렬하고 싶은 부모요소에 마법을 부린다.<br/>
 용어 : flex container, flex item, main axis:메인축(가로), cross axis:교차축(세로)
 - <code>컨테이너</code>에 사용하는것들 
-    1. flex-direction : 컨테이너 내의 아이템들을 배치할 방향과 주축을 결정 : row, column
-    2. flex-wrap : 무언가를 포장하는 느낌. 강제로 한줄로 배치되게 할것인지, 여러줄을 허용할것인지 정하는것 👉 어떻게? 자신의 크기를 보장해주는 wrap을 사용해서. wrap은 틀이야! 틀을 빵틀은 못줄여!
+    1. ```flex-direction``` : 컨테이너 내의 아이템들을 배치할 방향과 주축을 결정 : row, column
+    2. ```flex-wrap``` : 무언가를 포장하는 느낌. 강제로 한줄로 배치되게 할것인지, 여러줄을 허용할것인지 정하는것 👉 어떻게? 자신의 크기를 보장해주는 wrap을 사용해서. wrap은 틀이야! 틀을 빵틀은 못줄여!
     3. <code>direction + wrap</code> : 오른쪽 밑에 위치시킬 수 있어. reverse속성 써서
     4. ```justify-content``` : 주축을 기준으로 아이템을 어떻게 배열할건지! 
     start, center, end, space-between/around,  flex-start(주축이 시작하는 위치에서부터 정렬) 때문에 ```flex-direction```을 알아야해!
@@ -155,10 +155,53 @@
 
 
 - <code>아이템</code>에 사용하는 것들
-    1. order : flex나 grid에서 순서를 지정할 수 있어(코드의 순서대로 말고) 음수값도 쓸 수 있어. 작을수록 왼쪽에(start)에 위치해. nth-child(3)를 써서 3번쨰 자식을 바꿔
-    2. flex-grow : 배치를 한 다음에도 공간이 남을때 grow값을 1 주면 나머지 공간을 자기네들끼리 나눠갖음. grow의 값대로 각자 비율대로 갖게 돼. 늘리게 되기 전의 사이즈에 남은 사이즈를 1/n해서 가져가서 처음 ```크기가 다르면``` 후의 크기도 달라
-    3. flex-shrink : grow는 늘어나지만 얘는 줄어들어. 1 값이 default
-    4. flex-basis : 늘어나고 줄어드는 값을 조절할 수 있음. flex-grow의 처음 크기가 달랐던 문제를 해결. ```basis : 초기값``` 을 설정해서 모두 다 같은 사이즈로 설정할 수 있어. ```basis:0```으로 하면 크기가 변하기 전에 0의 사이즈를 줘서 변경크기는 동일한걸로 만들 수 있어
+    1. ``````order`````` : flex나 grid에서 순서를 지정할 수 있어(코드의 순서대로 말고) 음수값도 쓸 수 있어. 작을수록 왼쪽에(start)에 위치해. nth-child(3)를 써서 3번쨰 자식을 바꿔
+    2. ``````flex-grow`````` : 배치를 한 다음에도 공간이 남을때 grow값을 1 주면 나머지 공간을 자기네들끼리 나눠갖음. grow의 값대로 각자 비율대로 갖게 돼. 늘리게 되기 전의 사이즈에 남은 사이즈를 1/n해서 가져가서 처음 ```크기가 다르면``` 후의 크기도 달라
+    3. ``````flex-shrink`````` : grow는 늘어나지만 얘는 줄어들어. 1 값이 default
+    4. ``````flex-basis`````` : 늘어나고 줄어드는 값을 조절할 수 있음. flex-grow의 처음 크기가 달랐던 문제를 해결. ```basis : 초기값``` 을 설정해서 모두 다 같은 사이즈로 설정할 수 있어. ```basis:0```으로 하면 크기가 변하기 전에 0의 사이즈를 줘서 변경크기는 동일한걸로 만들 수 있어
     5. ```short hand``` 👉 flex : grow, shrink, basis순서로 사용해!!
     하나 또는 2개의 값을 사용하면 basis는 default로 0값을 돼. px을 쓸 수 있어
-    6. align-self : 얘는 ```각자의``` 위치를 정하는애. align-items는 각 줄의 위치를 어디다둘지 하는것. 그래서 nth-child(4) 같이 사용해서 그 애의 위치를 지정할 수 있어
+    6. ``````align-self`````` : 얘는 ```각자의``` 위치를 정하는애. align-items는 각 줄의 위치를 어디다둘지 하는것. 그래서 nth-child(4) 같이 사용해서 그 애의 위치를 지정할 수 있어
+
+# Grid
+
+flex레이아웃이랑 비슷한 개념. flex는 주축에만 여러개의 아이템이 있을 수 있어. 교차축에 여러개의 아이템을 갖고싶으면 ```flex-wrap```의 속성을 변경해서 가로줄이 넘쳐났을 떄 다음줄에 넣어줄 수 있어. ```flex의 컨셉은 가로로의 배열을 위함```
+
+grid는 flex랑 다르게 주축 뿐만아니라 교차축에 다 넣을 수 있어. flex는 1차원이라면, grid는 ```2차원```이다! 미리 테이블(컨테이너)을/를 만들어서 각 아이템을 순서대로 넣은거다! 따라서 행,열값이 존재 햐!
+
+행과 열 사이의 공백은 ```gutters```라고 부른댜.
+- ```grid``` : shorthand 👉 명시적인 요소(grid-template-rows/columns/areas), 암시적인 요소(grid-auto-rows/colums/flow) 값들을 한번에 사용할 수 있어. ```/```를 기준으로 앞은 row(행), 뒤쪽은 colums(열)에 관련된 요소를 설정하는거야. 
+
+암시적인 요소는 요소의 이름을 사용해. auto-flow, dense 등등..
+
+- 컨테이너 속성(부모)
+    - ```display``` : grid / inline-grid도 가능햐
+    - ```grid-template-columns``` : 1fr 1fr 1fr 👉 하나의 행을 1frame씩 3개로 나눠버린다.
+    - ```grid-template-rows``` : 사용법이 위와 동일해.  👉여러개를 작성하고 싶으면 ```repeat이라는``` 함수 표기법을 작성 해. ```repeat(4,80px)``` : 80px를 4번 작성해라라는 뜻이야!
+    - ```grid-template-areas``` : 땅따먹기하는것마냥 ```어디부터 어디까지 누구의 공간``` 을 선언할 수 있어. 
+    ```
+    "a a a"
+    "b c c"
+    "b c c"
+    ```
+    👉 1행 a 3개, 2행 b 1개, c 2개, 3행 b 1개, c 2개 를 갖는다. '.'을 사용하면 영역을 띄워줄 수 있어.
+    - ```row-gap/column-gap``` : 행/열들간의 간격을 지정해. gutter값을 지정하는거겟지?
+    - ```grid-auto-rows/columns``` : 정해진 템플릿의 개수보다 ```아이템이 많아질 경우``` 사이즈를 조절할 수 있는 기능. 100px라고 두면 명시적인 애들보다 넘친 애들은 100px의 사이즈를 갖도록 설정할 수 있어
+    - ```grid-auto-flow``` : 아이템의 자리잡는 흐름. 주축으로 갈것인지, 교차축 방향으로 갈것인지. row, column으로 하고, ```dense로``` 설정할수도 있지. dense는 빈 영역을 다음애들로 채워줄 수 있어. 땡겨오는거야.
+    - ```justify-content``` : flex에서는 주축을 기준으로 어디서 시작할건지에 관련한 배치 요소였어. Grid에서도 마찬가지야! start/end/center/space-around/between
+    - ```align-content``` : 교차축을 기준으로 정렬하는 애야! 얘는 align-item은 없나봐!
+    - ```justify-items``` : justify는 주축, align은 교차축이야! 뒤에 붙은 items랑 content의 차이는? content는 내부의 아이템을 여러개의 기준으로 정렬시키는거야. items는 하나의 아이템에 대한 속성을 정하는거지. ```justify-items```의 기본값은 stretch(갖을 수 있는 최대 너비, 높이를 갖는 거야). start나 end로 설정하게 되면 자기가 갖는 content의 길이만큼 너비를 갖고 높이는 stretch. 각각 아이템의 주축의 특성을 주고 싶으면 ```justify-self```키를 사용해서 값을 주면 돼
+    - ```align-items``` : 교차축을 기준으로 item들의 위치를 정하는거지. 얘도 기본값은 stretch.
+
+- 아이템 속성(자식)
+
+    - ```grid-row``` : 단축속성이다! grid-row-start/end속성부터 이해해야햐!
+    - ```grid-start``` : grid-row-start, grid-row-end : 만들어진 grid의 선에서 몇번째부타 시작해서 몇번째까지 차지할것인지 해 줘. start와 end를 슬레시(/)로 한번에 쓰는게 grid-row야! 어디서 시작하든지 시작하는곳에서부터 2칸만 차지하고 싶어 👉 grid-row : 2 / ```span 2``` : 2번째부터 시작해서 2칸을 차지하게 해
+    - ```grid-area``` : 컨테이너에 쓰는 grid-template-areas로 각각의 영역을 이름으로 지정을 해줬었는데, 그 이름을 지정하는 키가 얘야. 또! grid-row, grid-column의 단축속성으로도 사용 가능해!
+    - ```order``` : 순서 지정일까!? 그러하다!
+
+- Grid의 단위
+    - fr : fraction 👉 남은길이의 비율을 나눈거래. 절대길이와 같이 사용할 수 있어.
+    - min/max-content : 내부에 있는 길이라는걸 알겠어. 내부에 있는 단어의 기준으로 가장 긴 애가 min. 최대한 줄일 수 있을떄까지 줄여. max는 늘릴 수 있을떄까지 계속 늘려! 
+    - auto-fill, auto-fit : 반응형으로 grid를 사용할 때 사용된데. 길이를 절대길이로 설정한 후 화면을 늘리면 옆에 공백이 생기게 되는데 이때 사용되는게 auto-fill, auto-fit이래! ```repeat(auto-fill, 100px)``` 이면 컬럼의 길이가 남으면 알아서 들어가! 또 ```minmax(__,__)``` 함수를 통해서 최소값, 최대값을 지정할 수 있는데 이를 통해 repeat(auto-fill, minmax(100px,1fr)) 👉 최소는 100px, 최대는 1fr
+    - auto-fit 은 남는공간을 꽉 채워줘. 남는공간이 생기면 유용해!

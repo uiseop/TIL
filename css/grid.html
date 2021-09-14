@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 5px dashed orange;
+            display: grid;
+
+            /* grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr; */
+            width: 400px;
+            height: 400px;
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: repeat(3,1fr);
+            /* grid template areas를 통해 유연하게 자리를 잡도록 함 */
+            grid-template-areas: 
+                "hd hd hd hd hd"
+                "ma ma ma sb sb"
+                "ft ft ft ft ft";
+        }
+
+        .item{
+            background-color: paleturquoise;
+            border: 3px solid blue;
+            font-size: 24px;
+        }
+        /* 그리드의 이름표를 만듦 */
+        .header{
+            grid-area: hd;
+        }
+        .main{
+            grid-area: ma;
+        }
+        .sidebar{
+            grid-area: sb;
+        }
+        .footer{
+            grid-area: ft;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item header">header</div>
+        <div class="item main">main</div>
+        <div class="item sidebar">sidebar</div>
+        <div class="item footer">footer</div>
+    </div>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>
