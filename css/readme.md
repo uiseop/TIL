@@ -24,7 +24,7 @@
     - <code>:not</code> 👉 :not(.class명) or :not([type=text])
     - 상태에 따라 변경되는 동적 가상클래스 선택자 : <code>link</code> a:link, <code>visited</code> a:visited 방문을 하기 전의 색과, 방문을 했을 떄의 색을 지정할 수 있어!
     - <code>hover, active, focus</code> 👉 마우스의 상태에 따른 스타일 변경! active는 마우스를 클릭했을 때(mouseDown) 이벤트가 발생시 일어나!(버튼 클릭시!). focus는 tab키로 이동시켰을 때 보이더라구. 아니면 input태그로 current.focus시킬때 사용
-    - <code>enabled, disabled, checked</code> 👉 html 속성인 disabled인 애를 선택할 수 있어. 가령 input[type="text"]:enabled : disabled가 아닌애들만 따로 선택해서 스타일링을 하겠다!
+    - <code>enabled, disabled, checked</code> 👉 html 속성인 disabled인 애를 선택할 수 있어. 가령 input[type="text"]:enabled 👉 disabled가 아닌애들만 따로 선택해서 스타일링을 하겠다!
 6. <code>가상요소 선택자</code> 사용법은 클래스 선택자랑 비슷한데 얘는 더블클론(::)을 사용하는걸 추천한댜(하나만써도 동작은 혀)
     - <code>after, before</code> : CSS로 가상의 요소를 HTML에다 추가하는거야. 그러고 그 추가한 요소에 스타일링을 하는거!!
     ```

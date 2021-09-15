@@ -86,7 +86,7 @@ function heappush(heap,elem){ // 새 요소를 push하게 되면 최하위 레�
     heap.push(elem)
 
     let idx = heap.length - 1  // 마지막 인덱스의 위치 -> i = (n-1)//2 기 때문에 아래 과정 진행
-    // parseInt vs Math.trunc : parseInt는 toString을 통해 string으로 변환하는 과정에서 오류가 발생할 수 있어. 때문에 string arg에서만 주로 사용하고
+    // parseInt vs Math.trunc :   parseInt는 toString을 통해 string으로 변환하는 과정에서 오류가 발생할 수 있어. 때문에 string arg에서만 주로 사용하고
     // numbers를 다룰 땐 Math.trunc를 사용하자
     while(idx > 0){ // 자신의 위치를 찾을때까지 계속 진행
         const parent = Math.trunc((idx-1)/2)
@@ -198,3 +198,6 @@ console.log(tot);
 
 // 6번
 // 문제 이해가 가질 않습니다. 
+
+let arr123 = Array.from({length:10}, (_,i) => i)
+console.log(arr123);
