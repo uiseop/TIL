@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱 태그</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .header{
+            width: 100%;
+            height: 15%;
+            background-color: rgb(177, 177, 66);
+        }
+        .nav{
+            width: 15%;
+            height: 70%;
+            float: left;
+            background-color: rgb(54, 192, 38);
+        }
+        .section{
+            width: 70%;
+            height: 70%;
+            float: left;
+            background-color: rgb(82, 119, 8);
+        }
+        .aside{
+            width: 15%;
+            height: 70%;
+            float: left;
+            background-color: rgb(216, 0, 101);
+        }
+        .footer{
+            width: 100%;
+            height: 15%;
+            /* clear은 선행 float를 해제시키는 역할, left,right,both, none이 있지 */
+            clear: both;
+            background-color: rgb(160, 169, 221);
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">header</header>
+    <nav class="nav">nav</nav>
+    <section class="section">section</section>
+    <aside class="aside">aside</aside>
+    <footer class="footer">footer</footer>
+</body>
+</html>
