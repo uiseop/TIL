@@ -73,13 +73,14 @@ blockquote는 들여쓰기로 작성되어있어 <code>p</code>태그 안에서 
 - <code>GET</code> : action으로 보내는 주소 뒤에 구구절절 query형식으로 어떤 데이터들이 입력됐는지 붙어서 들어가.❗보안에 위험이 있어👉들어나도 괜찮은 검색창에서 사용될 수 있겠지
 - <code>POST</code> : 주소창에 내용이 들어나지 않아. 게시물 작성할때도 POST를 쓰지
 - <code>input</code> : input태그는 <code>label</code>태그와 보통 세트로 움직여. 해당 input안에 뭘 입력해야할지 알려줘야하니까 이름 스티커를 붙여주는것. 어떤 input인지 구분자로써는 input의 <code>id</code>속성을 label의 <code>for</code>속성 안에 넣으면 돼.(Tip❗❗ label의 자식요소로 input을 넣으면 for, id값을 넣지 않아도 돼)
-- <code>feildset</code> : feildset은 동일한 영역의 input들을 모아서 테두리로 감싸는 태그. 첫번째 태그로 <code>legend</code>태그를 사용해소 테이블의 <code>caption</code>태그와 같은 효과를 줄 수 있어. (Tip❗❗ 자손 태그들을 각각 disabled하지 않아도 한번에 disabled해줄 수 이썽!)
+- <code>fieldset</code> : feildset은 동일한 영역의 input들을 모아서 테두리로 감싸는 태그. 첫번째 태그로 <code>legend</code>태그를 사용해소 테이블의 <code>caption</code>태그와 같은 효과를 줄 수 있어. (Tip❗❗ 자손 태그들을 각각 disabled하지 않아도 한번에 disabled해줄 수 이썽!)
 
 # input 사용법
 
 - <code>input</code>태그는 속성이 매우 많아. 그 중 minlength와 maxlength를 통해 입력 개수를 조절할 수 있어 / 값으로 min과 max로 줄 수도 있지 <code>step</code>을 사용해서 증가하는 단위를 지정해줄수도 있다!
 - <code>type</code>속성 
     - <code>"number"</code>:숫자만 입력받아. <code>"range"</code>:막대그래프가나와. 
+    - `range`랑 함께 datalist를 사용하기도 하는데 input type="range" list="dali"> `<datalist id="dali">` option각각 label="LOW"하면 쓰여져 있음
     - <code>date/month/time</code>년,월,일을 입력받아
     - <code>"checkbox"</code>이름그대로 체크박스. 체크를하고 submit하면 설정한 <code>name=on</code>으로 넘어가. <code>checked</code>는 default로 체크돼
     - <code>"radio"</code> radio는 <code>name</code>이 다르면 중복선택이 가능하고, 같으면 하나만 선택 가능해. 👉어떻게 확인하게? 각각value값으루. 왜why?넘어가는건 ❗<code>name과 value</code>❗니까
@@ -87,14 +88,15 @@ blockquote는 들여쓰기로 작성되어있어 <code>p</code>태그 안에서 
 - <code>required</code>는 boolean태그로서 필수 입력값을 설정할 수 있어
 - <code>readonly</code>는 boolean태그로서 넣어주면 변경이 불가능해져 default값으로 넣어지겠지?
 - <code>list</code>는 select처럼 작동하는 input이야. list값엔 label처럼 <code>datalist</code>의 id값을 넣어주면 datalist안의 요소들이 drop-down 돼!
-- <code>datalist</code>는 ☝input list="id"의 id에 연결돼서 보여주는 애들로 <code>select</code>처럼 option들을 넣어줘
+- <code>datalist</code>는 ☝input list="id"의 id에 연결돼서 보여주는 애들로 <code>select</code>처럼 option들을 넣어줘. datalist id="list의id"로 넣어줘야 for처럼 연결이 돼
 
-<code>button</code>과 <code>input type="button"</code>의 차이점 : input은 value안에 값을 넣어야하기 때문에 문자열값만 사용할 수 있어. 하지만 button의 경우 children요소에 값을 넣기 떄문에 <strong>제출</strong>과 같이 format태그(이미지 등등..스타일 적용하기 수월해)로 꾸밀 수 있어.
+<code>button</code>과 <code>input type="button"</code>의 차이점 : input은 value안에 값을 넣어야하기 때문에 문자열값만 사용할 수 있어. (물론 src로 해서 이미지를 넣을 수도 있지) 하지만 button의 경우 children요소에 값을 넣기 떄문에 <strong>제출</strong>과 같이 format태그(이미지 등등..스타일 적용하기 수월해)로 꾸밀 수 있어.
 <code>select</code> : select태그는 drop down요소인데 자식으로 <code>option</code>태그로 안에 후보군들을 추가해줄 수 있어. 필수값으로 넣으려면 ☝<code>required</code>속성 값을 추가시켜 주는데, default값으로 유효성검사를 하기 위해서는 value=''을 통해 빈값을 넣어 검사를 강제할 수 있어.
-또, 기본값으로 설정하고싶으면 checkbox의 checked처럼 select태그는 <code>selected</code>로 쓰면 된대(..?!비슷해!😮)
+또, 기본값으로 설정하고싶으면 checkbox의 checked처럼 select태그는 <code>selected</code>로 쓰면 된대(..?!비슷해!😮). multiple 속성이 있으면 다수 항목 선택이 가능해
 
  - drop down에서 또 한번 분류하고 싶어👉<code>optgroup</code>태그로 감싸서 카테고리별로 분류할 수 있어. 결과는 들여쓰기로 나와! 카테고리 명은 <code>optgroup</code>태그 안에 <code>label</code>속성을 통해 값을 넣어주면 돼!
 <code>textarea</code>는 여러줄의 text를 입력을 받을 수 있게 해줘. rows,cols속성을 사용하면 보여주는 행,렬의 개수를 정해줄 수 있어
+    - cols : 열의 수, rows : 행의 수, name : 이름, wrap : 줄바꿈 요소(SOFT/HARD/OFF)
 
 # 정기테스트 복습
 
