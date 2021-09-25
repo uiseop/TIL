@@ -38,10 +38,25 @@ SW 기본 역량을 정량적으로 평가하는데 이 코딩테스트가 매�
     - Boolean
     - null : 존재하지 않거나 유효하지 않는 주소 표시
     - undefined : 선언 후 값을 할당하지 않은 변수
-    - Number
-    - String : 문자나 문자열을 표현하는 자료형
+    - `Number`
+        - 문자열로 변환하는 .toString(), `.toString(16/8/2/...)` 등 안에 숫자를 넣으면 `해당 진법으로 10진수의 수를 변환`
+        - n진법의 숫자를 변환 `parseInt(bin,2)` 👉 bin이라는 2진수를 10진수로 변환
+        - 소수점 몇자리까지 제한하여 표현하는 .toFixed(), .toPrecision(): 정수를 포함해서 몇개까지 표현할것인지
+        - 타입을 확인하는 .isNaN(), .isFinite()
+    - `String` : 문자나 문자열을 표현하는 자료형
+        - 길이 : length
+        - 검색 : indexOf(문자),lastIndexOf(-1 사용가능), includes(), startsWith(), charAt(index) ... 등등
+        - 변환 : toUpperCase(), toLowerCase(), `splice는` 원본배열에서 n번째 요소에서 k개 추출하고 새로운 요소를 넣는 등 변환
+        - 치환 : replace()
+        - 추출 : slice(start,end), substring(start,length) ... 등등 `slice는` 원본배열에서 추출하는것. -1은 마지막 요소야. 
+        - 분할 : split(정규표현식, 개수(option))
     - Symbol
- - 객체타입 : object로 두개 이상의 복잡한 개체 저장이 가능해. key는 `value의 주소값`을 참조(reference)하는것이야.
+ - 객체타입 : object로 두개 이상의 복잡한 개체 저장이 가능해. key는 `value의 주소값`을 참조(reference)하는것이야. 
+    - `배열` : 여러 개체값을 순차적으로 나열한 자료구조. C나 자바의 배열과 같은 기능을 하는 객체이지만, 이들과는 다르게 굳이 크기를 지정하지 않아도 되며, 어떤 위치에 어떤 타입의 데이터를 저장하더라도 에러가 발생하지 않습니다. 그리고 일반적인 배열은 `연속적인 밀집 배열`이지만 자바스크립트의 배열은 해시기반의 `비 연속적인 희소 배열`이다.
+        - 추가/삭제 : push, pop, shift, unshift, 등등..
+        - 변형 : sort(), reverse(), join() 등등..
+        - 검색 : `find(item, index, array)` : 만족하는 값을 찾으면 해당 인덱스의 값 하나를, 없으면 -1을 출력해, `filter(item, index, array)` : 만족하는 모든 값들을 배열로 출력
+        - 누적합 : `reduce(acc, item, index, array)` : 초기값을 지정할 수 있어.
 
 # 객체 복사의 문제점
 
@@ -80,3 +95,40 @@ end : for(let i=0; i<10; i++){
 }
 ```
 로 하면 break 문을 만난 동시 end 라벨링이 된곳으로 돌아가서 종료를 함.(이런게 있다 라고만 알아가는 정도)
+
+# 함수 정의
+
+1. 함수 선언식 : function으로 선언
+2. 함수 표현식 : var/let/const 변수안에 함수를 선언 (이름없는 함수를 사용)
+3. 화살표 함수 : ES6 에서 등장한 화살표함수
+
+# 콜백함수
+
+콜백함수는 다른 `함수의 매개변수`로 전달되어 수행되어지는 함수
+고차함수는 `매개변수를 통해 함수`를 받아 호출하는 함수
+👉 고차함수의 매개변수로 들어오는 함수가 콜백함수다.
+```
+function calculator(callback, x,y){
+    return callback(x,y)
+}
+calculator:고차함수, callback:콜백함수
+```
+
+# call by *
+
+함수를 호출할 때 얕은호출이 발생되게 되는건가?
+`call by value`
+    - 값에 의한 복사로 함수 내에서 매개 변수 값을 변경 시켜도 영향을 미치지 않음
+    - 원시타입을 매개 변수로 넘겼을 때 발생
+
+`call by reference`
+    - 주소에 대한 복사로 함수 내에서 매개 변수 내 값을 변경시키면 `원본 데이터`에도 영향을 받음
+    - 객체타입을 매개 변수로 넘겼을 때 발생
+
+# this
+
+메서드에서 객체 내부의 속성(property) 값을 접근할 수 있는 지시자
+this는 runtime에 의해 결정되어 호출한 객체에 따라 다르다.
+ - 일반함수 : 전역 window를 가르킴
+ - 객체 : 호출한 객체
+ - 화살표함수 : 상위의 화살표함수가 아닌 함수를 가르킴. 없으면 전역객체인 window를 가르킴
