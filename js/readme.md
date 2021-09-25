@@ -57,6 +57,19 @@ SW 기본 역량을 정량적으로 평가하는데 이 코딩테스트가 매�
         - 변형 : sort(), reverse(), join() 등등..
         - 검색 : `find(item, index, array)` : 만족하는 값을 찾으면 해당 인덱스의 값 하나를, 없으면 -1을 출력해, `filter(item, index, array)` : 만족하는 모든 값들을 배열로 출력
         - 누적합 : `reduce(acc, item, index, array)` : 초기값을 지정할 수 있어.
+    - `Map` : `다양한 자료형`의 key를 허용(Object는 문자열만 key값으로 사용함)하는 key-value형태의 자료형을 저장 가능한 Collection
+        - 크기 : `size`
+        - 추가 : `set(key,value)`
+        - 접근 : `get(key)`
+        - 삭제 : delete(key)
+        - 전체삭제 : clear()
+        - 존재여부 확인 : `has(key)`
+        - 그 외 : keys(), values(), entries(), `Obeject.fromEntries(Map 객체)` : Map객체를 Object로 변경,` Object.entries(Objcet객체)` : Object👉[key,value]형태로 변경. 이 key-value를 다시 new Map(key-value)를 하면 Map 객체로 복원 가능.
+    - `Set` : 중복된 value 허용하지 않는 Collection. 대부분 Map 과 비슷
+        - 추가 : `add(value)`
+    - Date : get,set으로 날짜 정보를 얻고, 설정할 수 있음. new Date(Date.UTC(연, 월,일)) 하면 현재위치 기준의 시간을 알 수 있어.
+        - 날짜 정보 얻기 : 연/월/일 👉 getFullYear(), getMonth(), getDate()
+        - 시간 정보 얻기 : 시/분/초 👉 getHours(), getMinutes(), getSeconds()
 
 # 객체 복사의 문제점
 
@@ -129,6 +142,12 @@ calculator:고차함수, callback:콜백함수
 
 메서드에서 객체 내부의 속성(property) 값을 접근할 수 있는 지시자
 this는 runtime에 의해 결정되어 호출한 객체에 따라 다르다.
- - 일반함수 : 전역 window를 가르킴
+ - 일반함수 : 자기 자신을 가리킴. 호출한 객체겠지?
  - 객체 : 호출한 객체
  - 화살표함수 : 상위의 화살표함수가 아닌 함수를 가르킴. 없으면 전역객체인 window를 가르킴
+
+ # 생성자 함수
+
+  - 유사한 객체를 다중으로 만들 떄 사용되는 함수 (타 언어에서는 class로 쓰임)
+  - 일반적으로 생성자 함수의 첫 글자는 대문자로 시작
+  - 생성자 함수로 객체 생성 시 new 연산자를 통해 객체 생성 new Object, new Array ... 등등
