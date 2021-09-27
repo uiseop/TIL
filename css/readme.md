@@ -136,7 +136,6 @@
     - ```animation-iteration-count``` : 1,2,3번으로 수를 지정할 수 있고, <code>infinite</code>를 주면 무한번 반복시킬 수 있어
     - ```animation-direction``` : normal, reverse, <code>alternate</code>:정방향으로갔다가 다시 돌아오는 애니메이션!, alternate-reverse:역방향으로 시작해서 다시 돌아오기!
     - ```animation-play-state``` : 애니메이션의 상태를 지정할 수 있어. paused, running으로 변경 가능해!
-    - ```animation-fill-mode``` : 마지막의 스타일을 지정할 수 있어. forward는 ani의 마지막, backwards는 ani의 처음을 유지해주면서 애니메이션을 유지시켜줄 수 있어
 
 # Flexbox
 
