@@ -303,12 +303,61 @@ function sol16(arr){
     return result
 }
 // reverse하는 다른 방법은 반으로 나눠서 양쪽 끝끼리 교체하는 식으로 해서 진행할 수 있어!
+// let input = [
+//     [1,2,3,4],
+//     [-1,6,'hello',-15],
+//     ['apple','banana','mango']
+// ]
+
+// for(let idx in input){
+//     console.log(`#${+idx+1} ${sol16(input[idx])}`)
+// }
+
+function sol17(str){
+    str = str.split(/\s/)
+    let result = []
+    for(let word of str){
+        let toUpper = word[0].toUpperCase() + word.slice(1)
+        result.push(toUpper)
+    }
+    return result.join(' ')
+}
+
+// let input = [
+//     'Hello, My name is john',
+//     'This week is closed due to COVID-19',
+//     'fifty percent off this week'
+// ]
+
+// for(let idx in input){
+//     console.log(`#${+idx+1} ${sol17(input[idx])}`)
+// }
+
+function sol18(arr){
+    let tot = 1;
+    for(let sub_arr of arr){
+        for(let num of sub_arr){
+            tot *= num
+        }
+    }
+    return tot
+
+}
+
 let input = [
-    [1,2,3,4],
-    [-1,6,'hello',-15],
-    ['apple','banana','mango']
+    [[1],[2],[3]],
+    [
+        [1,2],
+        [3,4],
+        [5,6,7],
+    ],
+    [
+        [5,1],
+        [0.2,4,0.5],
+        [3,9],
+    ]
 ]
 
 for(let idx in input){
-    console.log(`#${+idx+1} ${sol16(input[idx])}`)
+    console.log(`#${+idx+1} ${sol18(input[idx])}`)
 }
