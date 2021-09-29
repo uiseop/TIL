@@ -29,7 +29,7 @@
             console.log(arr.join(" "))
             return
         }
-        // 재귀를 돌면서 변경되어야 될 부분
+        // 재귀를 돌면서 변경되어야 될 부분 // dfs였네!
         for(let i=s; i< arr.length; i++){
             [arr[s], arr[i]] = [arr[i],arr[s]]
             permutation(arr,s+1,r)
@@ -37,10 +37,30 @@
         }
     }
     ```
-- 조합 : 순서에 `상관 없게` Combinations
+- 조합 : 중복없이, 순서에 `상관 없게` Combinations
+    - nCr = n! / (n-r)!r!
+    ```
+    let input = [1,2,3,4]
+    let output = []
+    let count = 0
+
+    function combination(arr,data,s,idx,r){
+        if(s==r){
+            count += 1
+            console.log(data)
+            return;
+        }
+
+        for(let i=idx; arr.length - i >= r -s; i++){
+            data[s] = arr[i]
+            combination(arr,data, s+1, i+1, r)
+        }
+    }
+    ```
 - 중복 순열 : `중복이 가능하게`! 단, 순서에도 `상관이 있어` -> 카카오 21년 블라인드 테스트에 나왔지!?
 
 # 점화식
 
 - DP(Dynamic Programing)문제를 풀 때 사용되더라.
 - 점화식(재귀식)이란 수열에서 이웃하는 두개의 항 사이에 `성립하는 관계를` 찾는 관계식!
+- 등차수열의 각 아이템끼리의 차이는 `등차의 배수다`! 이걸로 O(1) 시간복잡도로 줄일 수 있어!
