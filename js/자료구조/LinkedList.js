@@ -37,6 +37,36 @@ LinkedList.prototype.append = function (value) {
         }
         current.next = node
     }
+
+    this.length += 1
+}
+// 원하는 위치에 노드 추가
+LinkedList.prototype.insert = function (value,idx=0){
+    // 기저조건 : 말도안되는 위치(음수 or 길이보다 큰 수)
+    if(idx < 0 || idx > this.length) return false
+
+    let node = new Node(value), current = this.head, index = 0, prev
+
+    if(idx == 0){
+        // 새로운 노드의 next를 이전의 head로
+        node.next = current
+        // 이 LinkedList의 head를 새로운 Node로
+        this.head = node
+    }
+    else{
+        while(index++ < idx){
+            // 현재가 앞의 값
+            prev = current
+            // 다음이 현재 값
+            current = current.next
+        }
+        prev.next = node
+        node.next = current
+    }
+
+    this.length += 1
+
+    return true
 }
 
 let ll = new LinkedList()
@@ -46,3 +76,9 @@ ll.append(10)
 ll.append(100)
 
 ll.printNode()
+
+ll.insert(2,1)
+ll.insert(3,3)
+
+ll.printNode()
+console.log(ll.size());
