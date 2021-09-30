@@ -20,7 +20,7 @@
 4. <code>attr*=value</code> : value를 포함하고 있는!! a[href="naver"]
 5. <code>가상클래스 선택자</code> <code>태그이름 + : </code>로 시작해. 클래스는 없지만 있는것처럼 동작하도록!
     - li:first-child 👉 콜론(:)과 조건을 명시해서 그 부분만 스타일링해줄수 있어. 🔥주의! first-child는 해당 셀렉터의 부모요소로 가서 부모요소의 첫번째 자식을 선택하는거야. 만약 부모의 첫번쨰 자식의 class이름이 다르면 스타일링되는애는 없을 수 있지 // + last-child, <code>nth-child</code>(몇번째 자식인지/함수표현식도 가능 가령 2n, 2n-1, odd, even)
-    - first-of-type 👉 first-child의 허점을 피할 수 있어. 부모요소에서 선택자의 첫번째들 모두를 선택해주는거야! // + last-of-type, nth-of-type() ...  👍👍이걸 더 많이 사용한데
+    - first-of-type 👉 first-child의 허점을 피할 수 있어. 부모요소에서 선택자의 첫번째들 모두를 선택해주는거야! // + last-of-type : type들중 마지막, nth-of-type() ...  👍👍이걸 더 많이 사용한데, `nth-of-type(An + B)로 A의 배수, B부터 시작하는거 고를 수 있음`
     - <code>:not</code> 👉 :not(.class명) or :not([type=text])
     - 상태에 따라 변경되는 동적 가상클래스 선택자 : <code>link</code> a:link, <code>visited</code> a:visited 방문을 하기 전의 색과, 방문을 했을 떄의 색을 지정할 수 있어!
     - <code>hover, active, focus</code> 👉 마우스의 상태에 따른 스타일 변경! active는 마우스를 클릭했을 때(mouseDown) 이벤트가 발생시 일어나!(버튼 클릭시!). focus는 tab키로 이동시켰을 때 보이더라구. 아니면 input태그로 current.focus시킬때 사용
@@ -37,6 +37,9 @@
         - 일반 형제 선택자 결합(~) <code>span ~ p</code> 라고 하면 span의 형제 태그중 아래있는 p들을 선택해
         - 인접 형제 선택자 결합(+) <code>span + p</code> 라고 하면 span인접한 요소만(바로 뒤) 고를 수 있어!
     - <code>상속 제어하기</code> 👉 initial, inherit, unset이 있어!. how? all:initial로 상속을 끊을 수 있어 default로 돌리는거야!
+
+7. 선택자 바로 옆에 있는것 고르기 : A + B 라고 하면 A 바로 옆의 B들을 다 골라!
+8. ~ 사이에 : A~B이면 A+1 부터 B까지 태그들을 다 골라!
 
 # 폰트 관련 속성
 
