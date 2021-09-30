@@ -40,7 +40,7 @@
 
 # 폰트 관련 속성
 
-1. <code>font-size/weight/family/style</code>을 가장 많이 사용. 한번에 선언하는 방법 : size,family를 입력한 후에, 그 앞에 style,weight를 입력하고 height의 경우 사이즈/높이 (슬레시 필수)로 작성해
+1. <code>font-size/weight/family/style</code>을 가장 많이 사용. 한번에 선언하는 방법 : size,family를 입력한 후에, 그 앞에 style,weight를 입력하고 height의 경우 사이즈/높이 (슬레시 필수)로 작성해 , 스타일 요소 풀기 : unset
 2. <code>Letter Spacing</code> 문자 사이 간격을 조정 : letter-spaing / word-spacing의 값을 할당. ex) 3px
 3. <code>text-align</code> 텍스트를 위치시키는 요소. block요소인지, inline요소인지에 따라 위치가 조정이 안될수도 있어. 왜냐! 전체 길이를 기준으로 좌,가운데,우로 정렬을 시키는것이기 때문에!
 4. <code>text-indent</code> 텍스트의 시작부분을 npx; 만큼 띄워쓰게 해줄 수 있는아이. font-align과 마찬가지로 block 요소인지, inline요소인지에 따라 달라져!
@@ -206,3 +206,9 @@ grid는 flex랑 다르게 주축 뿐만아니라 교차축에 다 넣을 수 있
     - min/max-content : 내부에 있는 길이라는걸 알겠어. 내부에 있는 단어의 기준으로 가장 긴 애가 min. 최대한 줄일 수 있을떄까지 줄여. max는 늘릴 수 있을떄까지 계속 늘려! 
     - auto-fill, auto-fit : 반응형으로 grid를 사용할 때 사용된데. 길이를 절대길이로 설정한 후 화면을 늘리면 옆에 공백이 생기게 되는데 이때 사용되는게 auto-fill, auto-fit이래! ```repeat(auto-fill, 100px)``` 이면 컬럼의 길이가 남으면 알아서 들어가! 또 ```minmax(__,__)``` 함수를 통해서 최소값, 최대값을 지정할 수 있는데 이를 통해 repeat(auto-fill, minmax(100px,1fr)) 👉 최소는 100px, 최대는 1fr
     - auto-fit 은 남는공간을 꽉 채워줘. 남는공간이 생기면 유용해!
+
+# Scroll snap
+
+카드뉴스처럼 슉슉 넘어가는 CSS4에서 새로 등장한 내용이래
+- `container` : scroll-snap-type : x,y축 어디로? mandatory라는 속성도 있네
+- `content` : scroll-snap-align : center인지 위치 정렬하는ㄷ것

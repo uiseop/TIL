@@ -20,5 +20,29 @@ const fibonaci = (number) => {
     return fibonaci(number-1) + fibonaci(number-2)
 }
 
-let result = fibonaci(10)
-console.log(result);
+// let result = fibonaci(10)
+// console.log(result);
+
+// class Dog{
+//     constructor(name){
+//         this.name = name
+//     }
+//     gender(){
+//         return this.name === 'Puppy' && 'woman'
+//     }
+// }
+
+// const myDog = new Dog('Puppy')
+// console.log(myDog.name, myDog.gender());
+
+// prism = (() => {
+//     let x = 0;
+//     const real = () => {
+//         return x+=1
+//     }
+//     return real
+// })()
+
+// console.log(prism());
+
+
