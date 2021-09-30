@@ -103,9 +103,20 @@ LinkedList.prototype.removeAt = function (idx=0){
     }
 
     this.length -= 1
+    // 삭제된값 pop!
     return current.data
+}
 
+LinkedList.prototype.indexOf = function (value){
+    let current = this.head, index = 0
 
+    while(current != null){
+        if(current.data === value) return index
+        index += 1
+        current = current.next
+    }
+
+    return false
 }
 
 let ll = new LinkedList()
