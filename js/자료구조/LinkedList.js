@@ -68,6 +68,45 @@ LinkedList.prototype.insert = function (value,idx=0){
 
     return true
 }
+// Node안의 값이 value인것을 찾아서 삭제
+LinkedList.prototype.remove = function (value){
+    let current = this.head, prev
+
+    while(current.data != value && current.next != null){
+        prev = current
+        current = current.next
+    }
+
+    if(current.data != value) return false
+    // current.data가 value와 일치하다는것이니까
+    if(current === this.head) this.head = current.next
+    else{
+        // 이전의 다음 값은 현재의 다음 값. 👉 현재 값은 사라져
+        prev.next = current.next
+    }
+
+    this.length -= 1
+    return true
+}
+
+LinkedList.prototype.removeAt = function (idx=0){
+    if(idx < 0 || idx > this.length) return false
+
+    let current = this.head, prev, index=0
+    if(idx === 0) this.head = current.next
+    else{
+        while(index++ < idx){
+            prev = current
+            current = current.next
+        }
+        prev.next = current.next
+    }
+
+    this.length -= 1
+    return current.data
+
+
+}
 
 let ll = new LinkedList()
 
@@ -79,6 +118,8 @@ ll.printNode()
 
 ll.insert(2,1)
 ll.insert(3,3)
+console.log(ll.remove(5))
+console.log(ll.removeAt(1000));
 
 ll.printNode()
 console.log(ll.size());
