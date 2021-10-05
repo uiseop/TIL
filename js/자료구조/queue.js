@@ -1,4 +1,4 @@
-function Queue(q = []) = {
+function Queue(q = []){
     this.queue = q
 }
 
