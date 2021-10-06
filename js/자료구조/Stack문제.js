@@ -48,23 +48,3 @@ const sol2 = input => {
 // for(let arr of input){
 //     console.log(`${sol2(arr)} gogo`);
 // }
-
-function Queue(array = []){
-    this.array = array
-    this.max = Math.max(...this.array)
-}
-
-const sol4 = (prio, num) => {
-    let q = new Queue(prio)
-    
-}
-
-let input = [
-    [[3],0],
-    [[3,4,5,6],2],
-    [[1,1,5,1,1,1],0]
-]
-
-for(let print of input){
-    console.log(`${sol4(print[0], print[1])}`)
-}
