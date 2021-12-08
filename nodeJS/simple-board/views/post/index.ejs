@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <%- include('../partials/nav.ejs') %>
+        <main>
+            <h2>게시판 목록들</h2>
+            <ul class="boards">
+                <% posts.forEach((post) => { %>
+                <li class="post">
+                    <a href="/posts/<%= post.shortId %>"><%= post.title %></a>
+                </li>
+                <% }) %>
+            </ul>
+        </main>
+    </body>
+</html>

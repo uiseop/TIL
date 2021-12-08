@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <%- include('../partials/nav.ejs') %>
+        <main>
+            <h2 class="title">게시판 작성하기</h2>
+            <div class="formtag">
+                <form action="/posts" method="POST">
+                    
+                    제목 : <input class="content" type="text" id="title" name="title" >
+                    <br>
+                    내용 : <input class="content" type="text" id="content" name="content">
+                    <br>
+                    <button type="submit">등록하기</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
