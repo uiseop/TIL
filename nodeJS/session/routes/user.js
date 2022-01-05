@@ -19,7 +19,7 @@ router.post("/login", async (req, res, next) => {
         .digest("hex");
     if (hashedPW === user.password){
         console.log("비밀번호가 일치합니다")
-        req.session.email = email
+        req.session.email = email   
         res.redirect('/user')
     }else{
         console.log('비밀번호 틀림 뺴얘얘얭얘얭')
