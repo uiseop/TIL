@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #3d3d3d;
+}
+/*💬 body는 최소 높이를 100vh(사용자 화면 100%)를 해서 모든 내용을 가운데 정렬을 시킨다. */
+
+.container {
+    display: flex;
+    /* 이건 3d효과를 주려나봐 */
+    transform-style: preserve-3d;
+    /* gap을 사용해서 box내의 items 사이의 거리를 띌 수 있어. margin 사용하는것보다 훨씬 간편하네 */
+    gap: 10px;
+    transform: rotateY(30deg) rotateX(10deg);
+}
+
+.container .text {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    /* 얘도 마찬가지로 3d로 표현한데 */
+    transform-style: preserve-3d;
+    transition: 2.5s ease-in-out;
+    transition-delay: calc(0.25s * var(--j));
+}
+.container:hover .text {
+    transform: rotateX(360deg);
+}
+.container:hover .text:last-child {
+    transform: rotateX(630deg);
+}
+.container .text::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #373737;
+    transform-origin: left;
+    transform: rotateY(90deg) translateX(-50px);
+}
+.container .text:last-child::before {
+    background: #29ab3c;
+}
+
+.container .text span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#434343, #535353);
+    /* 모든 span요소들을 절대위치로 좌측 상단으로 끌어올렸어 */
+    display: flex;
+    /* 그런 후 display를 flex를 줫는데 각 span은 이제 flex: 박스 안에 item을 배치하는것... 뭐지?? 이렇게 하니까 숫자가 하나밖에 안보이네 */
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-weight: bold;
+    color: #fff;
+    transform-style: preserve-3d;
+    transform: rotateX(calc(90deg * var(--i))) translateZ(50px);
+}
+
+.container .text:last-child span {
+    background: linear-gradient(#29c040, #32ed4e);
+    color: #333;
+}
