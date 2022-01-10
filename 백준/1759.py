@@ -19,7 +19,7 @@ def DFS(idx, length, string):
         mo, ja = check(string)
         if mo >= 1 and ja >= 2:
             print("".join(string))
-            return
+            
         return
     for i in range(c):
         if idx < i and not visited[i]:
@@ -30,5 +30,3 @@ def DFS(idx, length, string):
             string.pop()
 
 DFS(-1, 0, [])
-    
-    
