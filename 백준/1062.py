@@ -1,3 +1,7 @@
+import sys
+
+input = sys.stdin.readline
+
 def DFS(idx, cnt):
     global ans
 
@@ -31,7 +35,7 @@ elif k == 26:
     exit()
 
 ans = 0
-words = list(set(input()) for _ in range(n))
+words = list(set(input().rstrip()) for _ in range(n))
 alpha = [0] * 26
 
 for a in ["a","n","t","i","c"]:
