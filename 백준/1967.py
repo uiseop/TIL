@@ -1,6 +1,7 @@
 import sys
 import heapq
 sys.setrecursionlimit(10**6)
+input = sys.stdin.readline
 
 def dfs(frm):
     if not tree[frm]:
@@ -13,7 +14,9 @@ def dfs(frm):
     return
 
 n = int(input())
-
+if n == 1:
+    print(0)
+    exit()
 tree = [[] for _ in range(n + 1)]
 sumList = [[] for _ in range(n + 1)]
 for _ in range(n-1):
