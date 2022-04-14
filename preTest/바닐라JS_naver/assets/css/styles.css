@@ -239,6 +239,16 @@ textarea::-webkit-outer-spin-button {
   display: flex;
   height: 46px;
   background-color: #03b753;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.header-area .place-tab::-webkit-scrollbar {
+  display: none;
 }
 
 .header-area .tab-inner {

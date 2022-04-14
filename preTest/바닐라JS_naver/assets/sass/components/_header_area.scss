@@ -36,6 +36,7 @@
         display: flex;
         height: $place-tab-height;
         background-color: #03b753;
+        @include scroll-x;
     }
 
     .tab-inner {

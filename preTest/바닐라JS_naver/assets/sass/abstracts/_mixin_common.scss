@@ -1,0 +1,11 @@
+@mixin scroll-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; // IE 스크롤바 감추기
+    scrollbar-width: none; // Firefox 스크롤바 감추기
+    &::-webkit-scrollbar {
+        display: none; // Chrome 스크롤바 감추기
+    }
+}

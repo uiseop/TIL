@@ -20,3 +20,19 @@ Sass는 컴파일을 통해 CSS파일을 만들어 준다고 한다. Styled-Comp
 ### 새로 알게된 것
 - role 속성
 role속성은 접근성을 높여주는 속성이다. 아무래도 사용자가 많기때문에 접근성을 높인 정석적인 방식을 사용한듯 함
+
+- scroll-x 스타일링 mixin 적용
+```css
+@mixin scroll-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; // IE 스크롤바 감추기
+    scrollbar-width: none; // Firefox 스크롤바 감추기
+    &::-webkit-scrollbar {
+        display: none; // Chrome 스크롤바 감추기
+    }
+}
+```
+이렇게 mixin으로 만들어도 되고, 아니면 명확하게 `style`을 만들어서 공통으로 적용되는 요소는 `_preset.scss`에서 불러오게 할 수 있겠군!
