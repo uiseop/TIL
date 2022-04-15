@@ -206,7 +206,7 @@ textarea::-webkit-outer-spin-button {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #03c95a;
+  background-color: #00c73c;
   color: #fff;
   z-index: 5000;
 }
@@ -286,4 +286,169 @@ textarea::-webkit-outer-spin-button {
   padding: 0 4px;
   position: relative;
   display: inline-block;
+}
+
+.container {
+  padding-top: 94px;
+}
+
+.common-inner {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.order-info-area {
+  padding: 10px 18px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  background-color: #e7f7ff;
+}
+
+.order-info-area .info-main-title {
+  display: flex;
+  justify-content: space-between;
+  line-height: 39px;
+  align-items: center;
+}
+
+.order-info-area .title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+  color: #333;
+}
+
+.order-info-area .title .ico_n_logo {
+  margin-right: 6px;
+  width: 24px;
+  height: auto;
+}
+
+.order-info-area .logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.order-info-area .logo::before {
+  display: inline-block;
+  overflow: hidden;
+  color: transparent;
+  white-space: nowrap;
+  background-image: url("../images/sprite.png");
+  background-size: 773px 662px;
+  content: "";
+  width: 28px;
+  height: 25px;
+  background-position: -212px -548px;
+  position: absolute;
+  right: 36px;
+  bottom: 3px;
+}
+
+.order-info-area .logo .logo_img {
+  width: 39px;
+  height: 39px;
+}
+
+.order-info-area .order_type_container {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  justify-content: space-between;
+}
+
+.order-info-area .order_type_container .type_switch {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0 7px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #666;
+  letter-spacing: -0.3px;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.order-info-area .order_type_container .type_switch.is_active {
+  position: relative;
+  flex-grow: 1.2;
+  border: 1px solid #333;
+  background-color: #fff;
+  font-size: 15px;
+  color: #333;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+}
+
+.order-info-area .order_type_container .type_switch.is_active::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  border-width: 0 1px 1px 0;
+  background-color: #fff;
+  transform: rotate(45deg) translateX(-50%);
+}
+
+.order-info-area .order_type_container .type_switch.is_active .ico_check {
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.order-info-area .order_type_container .ico_check {
+  display: none;
+}
+
+.order-info-area .order_type_container .ico_takeout {
+  display: inline-block;
+  overflow: hidden;
+  color: transparent;
+  white-space: nowrap;
+  background-image: url("../images/sprite.png");
+  background-size: 773px 662px;
+  width: 18px;
+  height: 18px;
+  background-position: -678px -404px;
+  vertical-align: -3px;
+  margin-right: 5px;
+}
+
+.order-info-area .ico_dine {
+  display: inline-block;
+  overflow: hidden;
+  color: transparent;
+  white-space: nowrap;
+  background-image: url("../images/sprite.png");
+  background-size: 773px 662px;
+  width: 15px;
+  height: 15px;
+  background-position: -636px -621px;
+  vertical-align: -3px;
+  margin-right: 5px;
+}
+
+.order-info-area .info_main_notice {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 2px;
+  background-color: #fff;
+  font-size: 14px;
+  letter-spacing: -0.3px;
+  color: #333;
+}
+
+.order-info-area .info_main_notice.alert {
+  color: #fc4c4e;
+  font-weight: 700;
+}
+
+.order-info-area .info_main_notice .ico_clock {
+  margin-right: 6px;
 }

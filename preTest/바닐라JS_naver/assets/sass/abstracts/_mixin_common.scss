@@ -9,3 +9,12 @@
         display: none; // Chrome 스크롤바 감추기
     }
 }
+
+@mixin icon_all {
+    display: inline-block;
+    overflow: hidden;
+    color: transparent;
+    white-space: nowrap;
+    background-image: url("../images/sprite.png");
+    background-size: 773px 662px;
+}
