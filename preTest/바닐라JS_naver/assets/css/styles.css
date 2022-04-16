@@ -303,6 +303,7 @@ textarea::-webkit-outer-spin-button {
 
 .container {
   padding-top: 94px;
+  background-color: #f4f7f9;
 }
 
 .common-inner {
@@ -592,4 +593,69 @@ textarea::-webkit-outer-spin-button {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.menu_category_area {
+  position: sticky;
+  top: 94px;
+  margin-top: 10px;
+  background-color: #fff;
+}
+
+.menu_category_area .common-inner {
+  position: relative;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.menu_category_area .common-inner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #fff);
+}
+
+.menu_category_area .common-inner::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 18px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
+}
+
+.menu_category_area .menu_tab {
+  display: flex;
+  align-items: center;
+  height: 54px;
+}
+
+.menu_category_area .menu_tab .menu_item:first-child {
+  padding-left: 18px;
+}
+
+.menu_category_area .menu_tab .menu_item:last-child {
+  padding-right: 18px;
+}
+
+.menu_category_area .menu_tab .menu_tab {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 16px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.menu_category_area .menu_tab .menu_tab.is_active {
+  background-color: #424242;
+  font-weight: 700;
+  color: #fff;
 }
