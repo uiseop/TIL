@@ -1,0 +1,103 @@
+.recent_order_area {
+    display: flex;
+    margin-top: 16px;
+    border-radius: 2px;
+    padding: 18px 0;
+    background-color: #fff;
+
+    .recent_order_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        border-right: 1px solid $booking-color-bg102;
+        line-height: 1.42;
+        font-size: 12px;
+        font-weight: 700;
+        flex-shrink: 0;
+        color: $booking-color-text6;
+        .ico_clock {
+            margin-bottom: 4px;
+            width: 14px;
+        }
+    }
+
+    .recent_list {
+        display: flex;
+    }
+
+    .recent_item {
+        box-sizing: content-box;
+        width: 80px;
+        padding-left: 16px;
+        text-align: center;
+
+        &.is_ordered {
+            padding-right: 16px;
+            border-right: 1px solid $booking-color-bg102;
+        }
+
+        &:last-child {
+            padding-right: $m-padding;
+        }
+    }
+
+    .menu_img_area {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border: 1px solid $booking-color-border149;
+        border-radius: 100%;
+        background-color: rgba(0,0,0,0.01);
+    }
+
+    .badge_popular {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 5px;
+        border-radius: 10px;
+        line-height: 16px;
+        font-weight: 700;
+        font-size: 11px;
+        background-color: #ff61a7;
+        color: #fff;
+    }
+
+    .menu_img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+    }
+
+    .badge_cart {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 6px;
+        border: 1px solid $booking-color-border150;
+        border-radius: 100%;
+        background-color: $booking-color-bg8;
+        display: flex;
+    }
+
+    .ico_cart {
+        width: 16px;
+        height: 16px;
+    }
+
+    .menu_name {
+        margin-top: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        @include ellipse
+    }
+
+    .menu_price {
+        font-size: 13px;
+        font-weight: 700;
+        color: $point-color;
+        @include ellipse;
+    }
+}

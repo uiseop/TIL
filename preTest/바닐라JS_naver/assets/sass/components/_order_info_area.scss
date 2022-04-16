@@ -104,14 +104,23 @@
             margin-right: 5px;
         }
 
-    }
-    .ico_dine {
-        @include icon_all;
-        width: 15px;
-        height: 15px;
-        background-position: -636px -621px;
-        vertical-align: -3px;
-        margin-right: 5px;
+        .ico_dine {
+            @include icon_all;
+            width: 15px;
+            height: 15px;
+            background-position: -636px -621px;
+            vertical-align: -3px;
+            margin-right: 5px;
+        }
+
+        .ico_delivery {
+            @include icon_all;
+            width: 15px;
+            height: 15px;
+            background-position: -534px -621px;
+            vertical-align: -3px;
+            margin-right: 5px;
+        }
     }
 
     .info_main_notice {
@@ -130,7 +139,12 @@
         }
         .ico_clock {
             margin-right: 6px;
+            color: inherit;
         }
+    }
+
+    .ico_clock {
+        color: $booking-color-bg7;
     }
 
 }

@@ -18,3 +18,9 @@
     background-image: url("../images/sprite.png");
     background-size: 773px 662px;
 }
+
+@mixin ellipse {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

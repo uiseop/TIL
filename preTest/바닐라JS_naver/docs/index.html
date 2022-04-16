@@ -64,21 +64,217 @@
                             주문
                         </div>
                         <div class="logo">
-                            <img class="icon_all logo_img" src="https://naverbooking-phinf.pstatic.net/20201026_33/1603699353609HrKf5_JPEG/image.jpg?type=f110_110" alt="샐러디" />
+                            <img
+                                class="icon_all logo_img"
+                                src="https://naverbooking-phinf.pstatic.net/20201026_33/1603699353609HrKf5_JPEG/image.jpg?type=f110_110"
+                                alt="샐러디"
+                            />
                         </div>
                     </div>
+                    <!-- 주문분류 -->
                     <div class="order_type_container" role="tablist">
-                        <a href="#" class="type_switch is_active" role="tab"><span class="ico_takeout"></span>포장할게요<img class="ico_check" src="../assets/images/ico-check.svg" alt="" aria-hidden="true"></a>
-                        <a href="#" class="type_switch" role="tab"><span class="ico_dine"></span>먹고갈게요<img class="ico_check" src="../assets/images/ico-check.svg" alt="" aria-hidden="true"></a>
+                        <a href="#" class="type_switch is_active" role="tab"
+                            ><span class="ico_takeout"></span>포장<img
+                                class="ico_check"
+                                src="../assets/images/ico-check.svg"
+                                alt=""
+                                aria-hidden="true"
+                        /></a>
+                        <a href="#" class="type_switch" role="tab"
+                            ><span class="ico_dine"></span>매장<img
+                                class="ico_check"
+                                src="../assets/images/ico-check.svg"
+                                alt=""
+                                aria-hidden="true"
+                        /></a>
+                        <a href="#" class="type_switch" role="tab"
+                            ><span class="ico_delivery"></span>배달<img
+                                class="ico_check"
+                                src="../assets/images/ico-check.svg"
+                                alt=""
+                                aria-hidden="true"
+                        /></a>
                     </div>
-                    <div class="info_main_notice">가지고 가실 수 있게 포장해 드립니다.</div>
-                    <div class="info_main_notice alert hidden"><svg aria-hidden="true" class="ico_clock" viewBox="0 0 13 13" width="13" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="currentColor" d="M6.5 0a6.5 6.5 0 110 13 6.5 6.5 0 010-13zm0 1a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm.492 1.137v4.157l2.792 2.674-.692.722-3.1-2.97V2.137h1z"></path>
-                    </svg>지금은 주문을 받을 수 없습니다.</div>
+                    <div class="info_main_notice">
+                        가지고 가실 수 있게 포장해 드립니다.
+                    </div>
+                    <div class="info_main_notice alert hidden">
+                        <svg
+                            aria-hidden="true"
+                            class="ico_clock"
+                            viewBox="0 0 13 13"
+                            width="13"
+                            height="13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M6.5 0a6.5 6.5 0 110 13 6.5 6.5 0 010-13zm0 1a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm.492 1.137v4.157l2.792 2.674-.692.722-3.1-2.97V2.137h1z"
+                            ></path>
+                        </svg>
+                        지금은 주문을 받을 수 없습니다.
+                    </div>
+
+                    <!-- 최근 주문 영역 -->
+                    <div class="recent_order_area">
+                        <div class="recent_order_text">
+                            <svg
+                                aria-hidden="true"
+                                class="ico_clock"
+                                viewBox="0 0 13 13"
+                                width="13"
+                                height="13"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M6.5 0a6.5 6.5 0 110 13 6.5 6.5 0 010-13zm0 1a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm.492 1.137v4.157l2.792 2.674-.692.722-3.1-2.97V2.137h1z"
+                                ></path>
+                            </svg>
+                            최근<br />주문
+                        </div>
+                        <div class="recent_menu_area scroll-x">
+                            <ul class="recent_list">
+                                <li class="recent_item is_ordered">
+                                    <div class="menu_img_area">
+                                        <img
+                                            class="menu_img"
+                                            src="https://via.placeholder.com/80"
+                                            alt="메뉴이미지"
+                                        />
+                                        <span class="badge_cart"
+                                            ><img
+                                                src="../assets/images/ico-cart.svg"
+                                                alt="카트 아이콘"
+                                                class="ico_cart"
+                                        /></span>
+                                    </div>
+                                    <p class="menu_name">칠리베이컨 웜볼</p>
+                                    <p class="menu_price">6,100원</p>
+                                </li>
+                                <li class="recent_item is_ordered">
+                                    <div class="menu_img_area">
+                                        <span class="badge_popular">인기</span>
+                                        <img
+                                            class="menu_img"
+                                            src="https://via.placeholder.com/80"
+                                            alt="메뉴이미지"
+                                        />
+                                        <span class="badge_cart"
+                                            ><img
+                                                src="../assets/images/ico-cart.svg"
+                                                alt="카트 아이콘"
+                                                class="ico_cart"
+                                        /></span>
+                                    </div>
+                                    <p class="menu_name">칠리베이컨 웜볼</p>
+                                    <p class="menu_price">6,100원</p>
+                                </li>
+                                <li class="recent_item is_ordered">
+                                    <div class="menu_img_area">
+                                        <span class="badge_popular">인기</span>
+                                        <img
+                                            class="menu_img"
+                                            src="https://via.placeholder.com/80"
+                                            alt="메뉴이미지"
+                                        />
+                                        <span class="badge_cart"
+                                            ><img
+                                                src="../assets/images/ico-cart.svg"
+                                                alt="카트 아이콘"
+                                                class="ico_cart"
+                                        /></span>
+                                    </div>
+                                    <p class="menu_name">칠리베이컨 웜볼</p>
+                                    <p class="menu_price">6,100원</p>
+                                </li>
+                                <li class="recent_item is_ordered">
+                                    <div class="menu_img_area">
+                                        <span class="badge_popular">인기</span>
+                                        <img
+                                            class="menu_img"
+                                            src="https://via.placeholder.com/80"
+                                            alt="메뉴이미지"
+                                        />
+                                        <span class="badge_cart"
+                                            ><img
+                                                src="../assets/images/ico-cart.svg"
+                                                alt="카트 아이콘"
+                                                class="ico_cart"
+                                        /></span>
+                                    </div>
+                                    <p class="menu_name">칠리베이컨 웜볼</p>
+                                    <p class="menu_price">6,100원</p>
+                                </li>
+                                <li class="recent_item is_ordered">
+                                    <div class="menu_img_area">
+                                        <span class="badge_popular">인기</span>
+                                        <img
+                                            class="menu_img"
+                                            src="https://via.placeholder.com/80"
+                                            alt="메뉴이미지"
+                                        />
+                                        <span class="badge_cart"
+                                            ><img
+                                                src="../assets/images/ico-cart.svg"
+                                                alt="카트 아이콘"
+                                                class="ico_cart"
+                                        /></span>
+                                    </div>
+                                    <p class="menu_name">칠리베이컨 웜볼</p>
+                                    <p class="menu_price">6,100원</p>
+                                </li>
+                                <li class="recent_item is_ordered">
+                                    <div class="menu_img_area">
+                                        <span class="badge_popular">인기</span>
+                                        <img
+                                            class="menu_img"
+                                            src="https://via.placeholder.com/80"
+                                            alt="메뉴이미지"
+                                        />
+                                        <span class="badge_cart"
+                                            ><img
+                                                src="../assets/images/ico-cart.svg"
+                                                alt="카트 아이콘"
+                                                class="ico_cart"
+                                        /></span>
+                                    </div>
+                                    <p class="menu_name">칠리베이컨 웜볼</p>
+                                    <p class="menu_price">6,100원</p>
+                                </li>
+                                <li class="recent_item is_ordered">
+                                    <div class="menu_img_area">
+                                        <span class="badge_popular">인기</span>
+                                        <img
+                                            class="menu_img"
+                                            src="https://via.placeholder.com/80"
+                                            alt="메뉴이미지"
+                                        />
+                                        <span class="badge_cart"
+                                            ><img
+                                                src="../assets/images/ico-cart.svg"
+                                                alt="카트 아이콘"
+                                                class="ico_cart"
+                                        /></span>
+                                    </div>
+                                    <p class="menu_name">칠리베이컨 웜볼</p>
+                                    <p class="menu_price">6,100원</p>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- // 최근 주문 영역 -->
                 </div>
             </div>
         </div>
         <!-- // 주문정보영역 -->
+
+        <!-- 메뉴 카테고리 영역 -->
+        <div class="menu_category_area"></div>
+        <!-- // 메뉴 카테고리 영역 -->
 
         <div class="dimmed hidden"></div>
         <div class="order-popup hidden">
