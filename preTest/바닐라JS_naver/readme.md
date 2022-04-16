@@ -1,5 +1,8 @@
 # 마크업 언어를 복기해본다.
 
+https://m.booking.naver.com/order/bizes/411966/items/3589612?theme=place&entry=pll&area=pll
+<img src="./assets/images/capture.jpeg">
+해당 사이트의 레이아웃, 마크업을 제작해본다.
 # Day 1
 기본 CSS를 사용하기 보다 React에서 사용하는 Styled-Components처럼 작성할 수 있는 Sass를 사용해본다. 개발하는데에 있어 효율을 증가시켜주기때문에 선택이 아닌 `필수`라는 인식이 있음.
 
