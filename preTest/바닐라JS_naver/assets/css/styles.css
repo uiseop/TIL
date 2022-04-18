@@ -659,3 +659,68 @@ textarea::-webkit-outer-spin-button {
   font-weight: 700;
   color: #fff;
 }
+
+.menu_list_area {
+  padding: 28px 18px 10px;
+  background-color: #fff;
+}
+
+.menu_list_area:not(.new):not(.popular) {
+  margin-top: 10px;
+}
+
+.menu_list_area.new {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.menu_list_area.is_closed {
+  padding: 24px 18px;
+}
+
+.menu_list_area.is_closed + .is_closed {
+  margin-top: 0;
+  border-top: 1px solid #f2f2f2;
+}
+
+.menu_list_area.is_closed .ico-arrow {
+  transform: rotate(180deg);
+}
+
+.menu_list_area.is_closed .menu_list {
+  display: none;
+}
+
+.menu_list_area .menu_category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu_list_area .title_area {
+  display: flex;
+  align-items: center;
+}
+
+.menu_list_area .title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.3px;
+}
+
+.menu_list_area .period {
+  font-size: 14px;
+  letter-spacing: -0.3px;
+  color: #666;
+}
+
+.menu_list_area .period::before {
+  content: "";
+  display: inline-block;
+  background-color: #ededed;
+  border-radius: 100%;
+  margin: 0 10px;
+  width: 4px;
+  height: 4px;
+  vertical-align: middle;
+}
