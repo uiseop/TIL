@@ -20,3 +20,10 @@ console.log(Object.getOwnPropertyDescriptors(arr));
 - 배열 변형: Array.sort(), Array.reverse(), Array.join()
 - 배열 반복: Array.forEach(), Array.map(), Array.find(), Array.filter(), Array.reduce()
 - 배열 논리연산: Array.some(), Array.every()
+
+# 연결 리스트(Linked List)
+- 각 노드가 `데이터(data)`와 `포인터(next)`를 가지며, `한 줄`로 연결되어 있는 방식으로 데이터를 저장하는 자료 구조
+- 구현 메서드(method)
+    - 노드 개수/ 비어있는지/ 노드 출력: size(), isEmpty(), printNode()
+    - 노드 추가/ 삭제: append(), insert() / remove(), removeAt()
+    - 데이터 위치 확인: indexOf()
