@@ -64,6 +64,26 @@ console.log(Object.getOwnPropertyDescriptors(arr));
 -   반복적인 순회에서 연결리스트의 `tail`을 체크할 필요 없이 바로 다음 노드로 가면 되기때문에 이로 인한 `시간, 메모리, 코드` 모두 이득을 볼 수 있다고 해.
 
 # 스택(Stack)
-
 -   `LIFO(Last In First Out)`형태의 선형 자료 구조
 -   JS에선 배열(Array)의 메서드에 pop(), push()가 있기때문에 익숙하다.
+
+# 큐(Queue)
+- 먼저 넣은 데이터가 먼저 나오는 `FIFO(First In First Out)` 기반의 선형 자료 구조
+- 선착순으로 동작하는 자료구조
+- 앞쪽에서 탈출하는 deque와 뒤쪽에 추가하는 enque method가 있겠다.
+- JS에서 Array에서 shift메서드가 있지만 O(n)의 시간복잡도를 갖기때문에 실제 큐의 deque라고 할 수 없다.
+
+## JS Queue최적화
+- shift 메서드를 사용하지 않고 `index`로의 접근을 하면 최적화가 가능하다.
+
+<a href="https://github.com/uiseop/TIL/tree/master/js/%EC%84%A0%ED%98%95%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%ED%81%90/%ED%81%90.js">큐 최적화</a>
+
+```javascript
+Enque new_q: 10ms
+Enque q: 9ms
+
+Dequeue new_q: 13ms
+Dequeue q: 1545ms
+
+약 100배 차이가 남을 확인
+```
