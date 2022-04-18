@@ -27,3 +27,5 @@ console.log(Object.getOwnPropertyDescriptors(arr));
     - 노드 개수/ 비어있는지/ 노드 출력: size(), isEmpty(), printNode()
     - 노드 추가/ 삭제: append(), insert() / remove(), removeAt()
     - 데이터 위치 확인: indexOf()
+
+- 연결 리스트는 모든 행위에 있어서 검색을 먼저 하는데 검색에 있어 `O(n)`만큼의 시간복잡도를 갖는다. 따라서 배열에 비해 삽입, 삭제 연산은 빠르지만 탐색이 느린 단점이 있겠다.
