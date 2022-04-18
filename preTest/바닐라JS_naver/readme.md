@@ -88,3 +88,24 @@ blur요소의 겹침을 방지하기 위해 z-index를 넣어줬나봐.
 
 # Day 4
 - menu리스트들을 제작. Detail적인 부분이 조금 많이있었다. 가령 리스트들이 접혔다 펼쳐지면 margin-top이 들어가는 부분. 연속적으로 접히면 margin-top이 사라지는 부분을 처리해줘야한다. 
+- flex tip (잊고있었던 것), `flex-shrink: 0`은 flex로 주어진 레이아웃에서 줄어듦을 방지. 최소 크기를 보장
+```css
+padding: 18px;
+margin: 0 -18px; 
+```
+- 위처럼 마진과, 패딩값을 주면, 주어진 영역보다 넓게 가져갈 수 있어. 이는 외부에서 padding값을 넣었을 때, 이를 무시할 수 있는 좋은 팁이라고 한다.
+- 옆의 바(|): `transform: transelateY(1px);` 로 미세하게 디자인 가능.
+- mene_category_area의 z-index 추가: 하단의 메뉴 사진이 스크롤하면서 가리는것을 발견. z-index를 높임으로 해결
+
+### 다중열 말줄임 처리
+```css
+@mixin multi_ellipse($font-size, $line-height, $lines) {
+    font-size: $font-size;
+    line-height: $line-height;
+    max-height: $line-height * $lines;
+    overflow: hidden; /* IE 대응을 위한 코드, 아래는 다른 브라우저 말줄임 대응 */
+    display: -webkit-box;
+    -webkit-line-clamp: $lines; /* 몇줄을 받아올것인지 + ⬇️는 sass의 컴파일 과정에서 주석처리하기때문에 필수라고 함 */
+    -webkit-box-orient: vertical; /* autoprefixer: off */
+}
+```
