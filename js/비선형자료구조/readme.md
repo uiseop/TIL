@@ -21,3 +21,12 @@
 - 데이터 전체 획득 / 비어있는지 확인: getBuffer(), isEmpty()
 - 데이터 추가 / 삭제: pushFront(), popFront(), pushBack(), popBack()
 - 첫번째 & 끝 데이터 반환 / 사이즈 / 전체 삭제: front(), back(), size(), clear() 
+
+# 딕셔너리
+- 파이썬 언어에서는 기본 자료형으로 제공되고 있는 key-value형태로 다양한 자료형 개체를 저장하는 자료구조. (JS에서의 Map)
+- 일반 객체는 key값으로 `string`만 가능하지만 딕셔너리나 Map의 경우는 `다양한 자료형 개체를 key값으로` 선언할 수 있다는 장점이 있찌.
+
+## 구현 메서드
+- 전체 개체 획득 / 초기화 / 크기 반환: getBuffer(), clear(), size()
+- 개체 추가 / 삭제 / 반환 / 여부: set(), remove(), get(), has()
+- key,value 배열 반환 / 고차 함수: keys(), value(), each()
