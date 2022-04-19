@@ -7,3 +7,17 @@
 - 데이터 전체 획득 / 비어있는지 확인: getBuffer(), isEmpty()
 - 데이터 추가 / 삭제: enqueue(), dequeue()
 - 첫번째 데이터 / 사이즈 / 전체 삭제: front(), size(), clear()
+
+# 원형 큐
+- 원형 형태를 가지면서 큐랑 같은 성질을 갖어.
+- 딱히 차이가 없기때문에.. 구현은 하지 않겟따. 큐 최적화 하는 과정에서 index로 head와 tail을 줬었는데 사실 이 과정이 원형큐랑 비슷.
+- 크기가 정해져있기때문에 `isFull()`이라는 메서드를 갖음.
+
+# 데크(Dequeue)
+- 파이썬에서 많이 사용했었던 데크.
+- 삽입과 삭제가 양쪽 끝에서 모두 발생할 수 있는 선형 자료 구조. // 파이썬에서 `appendleft(), popleft(), ...`
+
+## 구현 메서드
+- 데이터 전체 획득 / 비어있는지 확인: getBuffer(), isEmpty()
+- 데이터 추가 / 삭제: pushFront(), popFront(), pushBack(), popBack()
+- 첫번째 & 끝 데이터 반환 / 사이즈 / 전체 삭제: front(), back(), size(), clear() 
