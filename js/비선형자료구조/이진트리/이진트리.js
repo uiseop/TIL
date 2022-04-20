@@ -27,13 +27,15 @@ BionaryTree.prototype.insert = function (value) {
 
 const tree = new BionaryTree();
 
-tree.insert("A")
-tree.insert("B")
-tree.insert("C")
-tree.insert("D")
-tree.insert("E")
 tree.insert("F")
+tree.insert("B")
+tree.insert("A")
+tree.insert("D")
+tree.insert("C")
+tree.insert("E")
 tree.insert("G")
+tree.insert("I")
+tree.insert("H")
 
 
 console.log(tree)
@@ -47,3 +49,40 @@ BionaryTree {
   }
 }
 */
+const preOrder = [];
+const inOrder = [];
+const postOrder = [];
+BionaryTree.prototype.preOrder = function(node) {
+    
+    if (node === null) {
+        return;
+    }
+    preOrder.push(node.value);
+    this.preOrder(node.left);
+    this.preOrder(node.right);
+}
+
+BionaryTree.prototype.inOrder = function(node) {
+    if(node === null) {
+        return;
+    }
+    this.inOrder(node.left);
+    inOrder.push(node.value);
+    this.inOrder(node.right);
+}
+
+BionaryTree.prototype.postOrder = function(node) {
+    if(node === null) {
+        return;
+    }
+    this.postOrder(node.left);
+    this.postOrder(node.right);
+    postOrder.push(node.value);
+}
+tree.preOrder(tree.root)
+tree.inOrder(tree.root)
+tree.postOrder(tree.root)
+
+console.log("preOrder result: ", preOrder.join("->"))
+console.log("inOrder result: ", inOrder.join("->"))
+console.log("postOrder result: ", postOrder.join("->"))
