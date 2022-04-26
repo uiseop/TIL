@@ -2,6 +2,7 @@
 
 function Graph() {
     this.edge = {};
+    this.visited = []
 }
 
 Graph.prototype.addVertex = function (v) {
@@ -14,8 +15,48 @@ Graph.prototype.addEdge = function (v1, v2) {
     this.edge[v1].push(v2);
 };
 
+Graph.prototype.dfs = function(startVertex) {
+    this._dfsRecursiveVisit(startVertex)
+    this._dfsLoopVisit(startVertex)
+}
+
+Graph.prototype._dfsRecursiveVisit = function(vertex) {
+    if (this.visited[vertex]) {
+        return;
+    }
+
+    this.visited[vertex] = true;
+    console.log(`visit "${vertex}"`)
+
+    let neighbors = this.edge[vertex];
+    for (let i=0; i < neighbors.length; i++) {
+        this._dfsRecursiveVisit(neighbors[i])
+    }
+}
+
+Graph.prototype._dfsLoopVisit = function(vertex) {
+    let stack = [];
+    stack.push(vertex);
+
+    while (stack.length !== 0) {
+        let v = stack.pop();
+        if (this.visited[vertex]) {
+            continue;
+        }
+
+        this.visited[v] = true;
+        console.log(`visit "${v}"`)
+
+        let brothers = this.edge[v];
+        for (let i=brothers.length - 1; i>=0; i--) {
+            stack.push(brothers[i])
+        }
+    }
+}
+
+
 let graph = new Graph();
-let vertices = ["A", "B", "C", "D", "E"];
+let vertices = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
 
 for (let i = 0; i < vertices.length; i++) {
     graph.addVertex(vertices[i]); // 정점 추가
@@ -32,9 +73,9 @@ graph.addEdge("B", "E");
 graph.addEdge("B", "F");
 graph.addEdge("E", "I");
 
+/*
 console.log(graph.edge)
 
-/*
 {
   A: [ 'B', 'C', 'D' ],
   B: [ 'E', 'F' ],
@@ -43,6 +84,8 @@ console.log(graph.edge)
   E: [ 'I' ]
 }
 */
+
+graph.dfs("A")
 
 Graph.prototype.removeEdge = function(v1, v2) {
     if (this.edge[v1]) {
