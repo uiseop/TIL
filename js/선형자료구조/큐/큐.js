@@ -1,3 +1,4 @@
+// 성능 개선 큐
 function Queue(array) {
     this.array = array ? array : [];
     this.tail = array ? array.length : 0;
@@ -17,7 +18,7 @@ Queue.prototype.dequeue = function () {
 
     return ret;
 };
-
+// 일반 큐
 function Queue2(array) {
     this.array = array ? array : [];
 }
