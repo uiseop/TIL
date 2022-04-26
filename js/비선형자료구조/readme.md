@@ -70,4 +70,11 @@
 ## 그래프의 표현/구현
 - 인접 리스트(Adjacent List): 정점에 연결된 다른 정점을 리스트로 표현 (A는 B,C,D와 연결, B는 A,E,F와 연결 ...)
 - 인접 행렬(Adjacent Matrix): 정점에 연결된 다른 정점을 정점*정점 크기의 매트릭스로 표현(\[[0,1,1], [1,0,0], [1,0,0]]...\)
-    
+
+# 자바스크립트 2차원 배열 만들기
+
+```javascript
+const visited = Array.from(Array(width), () => Array(width).fill(false))
+// false로 채워진 width*width 배열을 만들 수 있음.
+// 만약 빈 배열을 만들고 싶으면 그냥 fill없이 사용하면 돼
+```
