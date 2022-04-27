@@ -78,3 +78,9 @@ const visited = Array.from(Array(width), () => Array(width).fill(false))
 // false로 채워진 width*width 배열을 만들 수 있음.
 // 만약 빈 배열을 만들고 싶으면 그냥 fill없이 사용하면 돼
 ```
+
+# 힙 (Heap)
+- 최대값 혹은 최솟값을 빠르게 찾기 위해 완전 이진트리 형태로 연산을 수행하는 구조.
+- 정렬: 각 노드의 값은 자식 노드가 가진 값보다 작거나 혹은 큰 순서대로 정렬
+- 최대힙: 최대값이 root
+- 최소힙: 최소값이 root
