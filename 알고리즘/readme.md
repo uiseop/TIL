@@ -34,3 +34,17 @@ Object의 메서드를 알아봐야지?
 - Object.keys(obj): obj객체의 모든 key값들을 배열로 반환한다
 - Object.values(obj): obj객체의 모든 value값들을 배열로 반환한다
 - Object.entries(obj): obj객체의 `[key,value]`로 이뤄진 이차원 배열을 반한다.
+
+### new 연산자 -> 생성자 함수를 생성할 때 반드시 필수
+```js
+function User(name) {
+  // this = {};  (빈 객체가 암시적으로 만들어짐)
+
+  // 새로운 프로퍼티를 this에 추가함
+  this.name = name;
+  this.isAdmin = false;
+
+  // return this;  (this가 암시적으로 반환됨)
+}
+```
+`new` 연산자를 사용해서 User 객체를 생성하면 새로운 객체가 생성된다.
