@@ -28,3 +28,9 @@ dev 디렉터리의 stdin 파일을 읽어서 string의 split 메서드를 사�
 
 ✅ 결론: parseInt가 Number보다 좀 더 유연하게 형변환을 진행하기때문에 앞으로 parseInt를 자주 사용해보도록 한다.
 ## <p id="2">Graph</p>
+
+### 비선형 자료구조 -> Object(객체)를 사용한다
+Object의 메서드를 알아봐야지? 
+- Object.keys(obj): obj객체의 모든 key값들을 배열로 반환한다
+- Object.values(obj): obj객체의 모든 value값들을 배열로 반환한다
+- Object.entries(obj): obj객체의 `[key,value]`로 이뤄진 이차원 배열을 반한다.
