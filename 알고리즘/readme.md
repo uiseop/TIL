@@ -5,6 +5,7 @@
 - <a href="#2">Graph</a>
     - <a href="#2_1">Dijkstra</a>
     - <a href="#2_2">Kruskal</a>
+    - <a href="#2_3">Prim</a>
 <hr/>
 ## <p id="1">백준에서 자바스크립트로 문제 풀기</p>
 백준에는 자바스크립트가 없다. 그래서 node.js를 통해 문제를 풀어야 한다고 한다.  
