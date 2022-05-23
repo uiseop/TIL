@@ -39,42 +39,6 @@ Graph.prototype.addEdge = function (arr) {
     this.items[to].push(from)
 }
 
-Graph.prototype.find = function (start, visited, time) {
-    let total = time[start];
-    visited[start] = true;
-    const q = new Queue();
-    const next_q = new Queue();
-    q.enque(start);
-    while (true) {
-        let temp = 0;
-        while (!q.isEmpty()) {
-            const current = q.deqeue();
-            for (let next_vertex of this.items[current]) {
-                if (!visited[next_vertex]) {
-                    visited[next_vertex] = true;
-                    temp = temp < time[next_vertex] ? time[next_vertex] : temp;
-                    next_q.enque(next_vertex);
-                }
-            }
-        }
-        total += temp;
-        temp = 0;
-        while (!next_q.isEmpty()) {
-            const current = next_q.deqeue();
-            for (let next_vertex of this.items[current]) {
-                if (!visited[next_vertex]) {
-                    visited[next_vertex] = true;
-                    temp = temp < time[next_vertex] ? time[next_vertex] : temp;
-                    q.enque(next_vertex);
-                }
-            }
-        }
-        total += temp;
-        if (q.isEmpty()) break;
-    }
-    return total
-}
-
 let j=1;
 for (let i=0; i<T; i++) {
     const [N,K] = input[j++].split(" ").map((num) => parseInt(num))
@@ -89,7 +53,4 @@ for (let i=0; i<T; i++) {
     for (let k=0; k<K; k++) { // from, to 를 바꿔서 저장
         graph.addEdge(input[j++].split(" ").map((num) => parseInt(num)))
     }
-    const start = parseInt(input[j++]);
-    const visited = new Array(N+1).fill(false);
-    console.log(graph.find(start,visited, time));
 }
