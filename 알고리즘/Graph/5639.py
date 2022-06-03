@@ -32,13 +32,30 @@ class Tree:
         print(node.value)
 
 
-tree = Tree()
+# tree = Tree()
+binary_search_tree = []
 
 while True:
     try:
         num = int(input())
-        tree.insert(num)
+        # tree.insert(num)
+        binary_search_tree.append(num)
     except:
         break
+
+
+def post_order_print(left, right):
+    if left > right: return
+    middle = right + 1
+    for i in range(left + 1, right + 1): # 현재 구간에서 루트 노드보다 큰 노드가 나오는 포인트 찾기
+        if binary_search_tree[i] > binary_search_tree[left]:
+            middle = i
+            break
     
-tree.postOrder(tree.root)
+    post_order_print(left+1, middle-1)
+    post_order_print(middle, right)
+    print(binary_search_tree[left]) # 현재 노드의 value를 출력한다
+
+post_order_print(0, len(binary_search_tree) - 1)
+
+# tree.postOrder(tree.root)
