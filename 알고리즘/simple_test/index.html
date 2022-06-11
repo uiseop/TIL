@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="count"></div>
+    <script type="module">
+        const count = document.querySelector(".count")
+
+        // const printNumbers = (from, to) => {
+        //     let timerId = setInterval(() => {
+        //         if (from > to) {
+        //             clearInterval(timerId)
+        //             return
+        //         }
+        //         count.innerHTML = from;
+        //         from += 1;
+        //     }, 500)
+        // }
+
+        const printNumbers = (from, to) => {
+            setTimeout(
+                function run(from, to) {
+                    if (from <= to) {
+                        count.innerHTML = from
+                        setTimeout(run, 500, from + 1, to)
+                    }
+                }, 500, from, to
+            );
+        }
+        
+
+        printNumbers(0, 10)
+    </script>
+</body>
+</html>
