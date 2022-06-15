@@ -1,9 +1,7 @@
-(function () {
-    function greeter(person) {
-        return `Hello ${person}`;
-    }
+function greeter(person: string) {
+    return `Hello ${person}`;
+}
 
-    let user = "Uiseop Lee";
+let user = "Uiseop Lee";
 
-    document.body.textContent = greeter(user);
-})();
+document.body.textContent = greeter(user);
