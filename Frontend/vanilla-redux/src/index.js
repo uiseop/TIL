@@ -5,11 +5,14 @@ const add = get(".Add");
 const minus = get(".Minus");
 const number = get(".number");
 
+const ADD = "ADD"
+const MINUS = "MINUS"
+
 const countModifier = (count = 0, action) => {
     switch (action.type) {
-        case "add":
+        case ADD:
             return count + 1;
-        case "minus":
+        case MINUS:
             return count - 1;
         default:
             return count;
@@ -26,5 +29,5 @@ const onChage = () => {
 
 countStore.subscribe(onChage);
 
-add.addEventListener("click", () => countStore.dispatch({ type: "add" }));
-minus.addEventListener("click", () => countStore.dispatch({ type: "minus" }));
+add.addEventListener("click", () => countStore.dispatch({ type: ADD }));
+minus.addEventListener("click", () => countStore.dispatch({ type: MINUS }));
