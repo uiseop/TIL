@@ -1,27 +1,35 @@
+from collections import defaultdict
+import heapq
 import sys
 
 input = sys.stdin.readline
 
 v,e = map(int,input().split())
 
-dist = [[float("inf") for _ in range(v)] for _ in range(v)]
+graph = defaultdict(list)
+
+dist = [[float("inf") for _ in range(v+1)] for _ in range(v+1)]
+
+heap = []
 
 for _ in range(e):
     v1,v2,w = map(int,input().split())
-    dist[v1-1][v2-1] = w
+    graph[v1].append([v2,w])
+    dist[v1][v2] = w
+    heapq.heappush(heap, [w,v1,v2])
 
-answer = float("inf")
+while heap:
+    weight, target, cur = heapq.heappop(heap)
 
-for k in range(v):
-    for i in range(v):
-        for j in range(v):
-            if dist[i][k] != float("inf") and dist[k][j] != float("inf"):
-                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
-            
-for i in range(v):
-    answer = min(answer, dist[i][i])
+    if target == cur:
+        print(weight)
+        break
 
-if answer != float("inf"):
-    print(answer)
+    for n_node, n_weight in graph[cur]:
+        n_dist = weight + n_weight
+        if dist[target][n_node] > n_dist:
+            dist[target][n_node] = n_dist
+            heapq.heappush(heap, [n_dist, target, n_node])
+
 else:
     print(-1)
