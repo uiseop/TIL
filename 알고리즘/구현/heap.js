@@ -2,82 +2,83 @@ function Heap() {
     this.items = [];
 }
 
-Heap.prototype.swap = function (index1, index2) {
-    const temp = this.items[index1];
-    this.items[index1] = this.items[index2];
-    this.items[index2] = temp;
+Heap.prototype.swap = function (idx1, idx2) {
+    const temp = this.items[idx1];
+    this.items[idx1] = this.items[idx2];
+    this.items[idx2] = temp;
 };
 
-// 0 - 1,2 - 3,4/5,6 - ... 3,4의 parent는 1, 5,6의 parent는 2 => (idx - 1) // 2
-
-Heap.prototype.parentIndex = function (index) {
-    return Math.floor((index - 1) / 2);
+Heap.prototype.getParentIndex = function (idx) {
+    return Math.floor((idx - 1) / 2);
 };
 
-// 1의 leftChild는 3, 2의 leftChild는 5 => (idx*2) + 1
-
-Heap.prototype.leftChildIndex = function (index) {
-    return index * 2 + 1;
+Heap.prototype.getParent = function (idx) {
+    return this.items[this.getParentIndex(idx)];
 };
 
-Heap.prototype.rightChildIndex = function (index) {
-    return index * 2 + 2;
-};
-
-Heap.prototype.parent = function (index) {
-    return this.items[this.parentIndex(index)];
-};
-
-Heap.prototype.leftChild = function (index) {
-    return this.items[this.leftChildIndex(index)];
-};
-
-Heap.prototype.rightChild = function (index) {
-    return this.items[this.rightChildIndex(index)];
-};
-
-Heap.prototype.peek = function () {
-    return this.items[0];
-};
-
-Heap.prototype.size = function () {
-    return this.items.length;
-};
-
-// 추가 -> 마지막 Level의 왼쪽부터 추가하게 되는데 동시에 parent와 비교하면서 swap을 수행.
-
-Heap.prototype.heappush = function (value) {
-    let idx = this.size();
-    this.items.push(value);
-    while (this.parent(idx) && value < this.parent(idx)) {
-        this.swap(idx, this.parentIndex(idx));
-        idx = this.parentIndex(idx);
+Heap.prototype.heappush = function (val) {
+    let idx = this.items.length;
+    this.items.push(val);
+    while (this.getParent(idx) && this.getParent(idx) > val) {
+        this.swap(this.getParentIndex(idx), idx);
+        idx = this.getParentIndex(idx);
     }
-}
+};
 
-Heap.prototype.heappop = function() {
-    const value = this.items[this.size() - 1];
-    this.swap(this.size() - 1, 0);
-    this.items.pop();
+Heap.prototype.leftChild = function (idx) {
+    return this.items[this.leftChildIndex(idx)];
+};
+
+Heap.prototype.rightChild = function (idx) {
+    return this.items[this.rightChildIndx(idx)];
+};
+
+Heap.prototype.leftChildIndex = function (idx) {
+    return idx * 2 + 1;
+};
+
+Heap.prototype.rightChildIndx = function (idx) {
+    return idx * 2 + 2;
+};
+
+Heap.prototype.heappop = function () {
+    if (!this.items.length) return 'The heap is empty'
+    this.swap(0, this.items.length - 1);
+    const result = this.items.pop()
     let idx = 0;
-    while (this.leftChild(idx) && (this.leftChild(idx) < value) || (this.rightChild(idx) < value)) {
+    while (
+        (this.leftChild(idx) && this.leftChild(idx) < this.items[idx]) ||
+        this.rightChild(idx) < this.items[idx]
+    ) {
         let childIndex = this.leftChildIndex(idx);
-        if (this.rightChild(idx) && this.rightChild(idx) < this.items[childIndex]) {
-            childIndex = this.rightChildIndex(idx);
+        if (this.rightChild(idx) < this.items[childIndex]) {
+            childIndex = this.rightChildIndx(idx);
         }
         this.swap(idx, childIndex);
         idx = childIndex;
     }
-}
+    return result
+};
 
-const minHeap = new Heap();
-minHeap.heappush(90)
-minHeap.heappush(15)
-minHeap.heappush(10)
-minHeap.heappush(7)
-minHeap.heappush(12)
-minHeap.heappush(2)
-minHeap.heappush(8)
-minHeap.heappush(3)
+const heap = new Heap();
+heap.heappush(5);
+heap.heappush(4);
+heap.heappush(3);
+heap.heappush(2);
+heap.heappush(1);
+heap.heappush(1);
+heap.heappush(1);
+heap.heappush(1);
 
-console.log(minHeap)
+console.log(heap.items);
+
+console.log(heap.heappop())
+console.log(heap.heappop())
+console.log(heap.heappop())
+console.log(heap.heappop())
+console.log(heap.heappop())
+console.log(heap.heappop())
+console.log(heap.heappop())
+console.log(heap.heappop())
+console.log(heap.heappop())
+console.log(heap.heappop())
