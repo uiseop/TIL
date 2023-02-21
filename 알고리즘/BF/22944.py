@@ -1,4 +1,3 @@
-import heapq
 import sys
 
 input = sys.stdin.readline
@@ -6,68 +5,41 @@ input = sys.stdin.readline
 N, H, D = map(int,input().split())
 
 rect = [list(input().rstrip()) for _ in range(N)]
-dr = [1,-1,0,0]
-dc = [0,0,1,-1]
 
-start = [0,0]
-end = [0,0]
-flag = 0
+def find_SEU(rect):
+    us = set()
 
-for row in range(N):
-    for col in range(N):
-        if rect[row][col] == 'S':
-            start = [row, col]
-            flag += 1
-        elif rect[row][col] == 'E':
-            end = [row,col]
-            flag += 1
-        if flag == 2:
-            break 
-    if flag == 2:
-        break
+    for i in range(N):
+        for j in range(N):
+            if rect[i][j] != '.':
+                if rect[i][j] == 'U':
+                    us.add((i,j))
+                elif rect[i][j] == 'S':
+                    sr,sc = i,j
+                elif rect[i][j] == 'E':
+                    er,ec = i,j
+    
+    return sr,sc, er,ec, us
 
-visited = [[0 for _ in range(N)] for _ in range(N)]
-visited[start[0]][start[1]] = H
 
-heap = []
-heapq.heappush(heap, [0, start[0], start[1], H, 0])
+def solve(rect, N, H, D):
+    sr,sc, er,ec, us = find_SEU(rect)
+    result = [float('inf')]
 
-def isInRange(r,c):
-    if 0 <= r < N and 0 <= c < N:
-        return True
-    return False
+    def dfs(r,c,h,u,t):
+        d = abs(er-r) + abs(ec-c)
+        if d <= h + u:
+            result[0] = min(result[0], t+d)
+        else:
+            for i,j in list(us):
+                d = abs(i-r) + abs(j-c)
+                us.remove((i,j))
+                if d <= h + u:
+                    dfs(i,j,h-max(0, d-u-1), D-1, t+d)
+                us.add((i,j))
+    
+    dfs(sr,sc,H,0,0)
+    return -1 if result[0] == float('inf') else result[0]
 
-def solve():
-    while heap:
-        step, r ,c ,h ,u = heapq.heappop(heap)
-        
-        if h == 0:
-            continue
 
-        for i in range(4):
-            nr = r + dr[i]
-            nc = c + dc[i]
-            if isInRange(nr,nc):
-                if rect[nr][nc] == 'E':
-                    return step
-
-                if rect[nr][nc] == 'U':
-                    if visited[nr][nc] < h:
-                        visited[nr][nc] = h
-                        heapq.heappush(heap, [step+1, nr,nc, h, D-1])
-                elif u:
-                    if visited[nr][nc] < h:
-                        visited[nr][nc] = h
-                        heapq.heappush(heap, [step+1, nr,nc, h, u-1])
-                else:
-                    if visited[nr][nc] < h-1:
-                        visited[nr][nc] = h-1
-                        heapq.heappush(heap, [step+1, nr, nc, h-1, 0])
-    return False
-
-result = solve()
-
-if not result:
-    print(-1)
-else:
-    print(result + 1)
+print(solve(rect, N,H,D))
