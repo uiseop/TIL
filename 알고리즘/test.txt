@@ -1,4 +1,16 @@
-23 3
-00101110111000000110100
-01001111101010010001100
-11000001010110010110000
+15
+abcdefghijkl
+bcdefghijklm
+cdefghijklmn
+defghijklmno
+efghijklmnop
+fghijklmnopq
+ghijklmnopqr
+hijklmnopqrs
+ijklmnopqrst
+jklmnopqrstu
+klmnopqrstuv
+lmnopqrstuvw
+mnopqrstuvwx
+nopqrstuvwxy
+opqrstuvwxyz

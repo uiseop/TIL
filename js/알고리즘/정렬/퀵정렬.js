@@ -8,6 +8,7 @@ function quickSort(arr) {
     const left = [];
     const right = [];
     for (let i = 1; i < arr.length; i++) {
+        console.log(pivot, arr[i] < pivot, arr[i])
         if (arr[i] < pivot) {
             left.push(arr[i]);
         } else if (arr[i] > pivot) {
@@ -20,7 +21,7 @@ function quickSort(arr) {
     return quickSort(left).concat(pivot, quickSort(right));
 }
 
-console.log(quickSort([5, 3, 7, 1, 9]));
+console.log(quickSort([5, 5, 5, 7, 1, 9]));
 
 // -- In Place한 방법: 추가적인 공간을 필요로 하지 않기 떄문에 메모리 공간이 절약되지만,
 //  왼쪽/오른쪽 교환하는 과정에서 중복값의 위치가 변경될 수 있기때문에 unStable한 정렬 방법이다.

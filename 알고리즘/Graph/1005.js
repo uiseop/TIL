@@ -1,5 +1,4 @@
 let fs = require("fs");
-const { toNamespacedPath } = require("path");
 // let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n")
 let input = fs.readFileSync("test.txt").toString().trim().split("\n");
 
