@@ -1,6 +1,3 @@
-from collections import deque
-
-
 N,M,A,B = map(int,input().split())
 
 board = [[0 for _ in range(M)] for _ in range(N)]
