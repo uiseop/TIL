@@ -1,5 +1,5 @@
 let fs = require("fs");
-// let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n")
+// let input = fs.readFileSync("/dev/stdin").toString().trim().split("\n")w
 let input = fs.readFileSync("test.txt").toString().trim().split("\n").map((str) => str.replace('\r', ''));
 
 const [len, a] = input
